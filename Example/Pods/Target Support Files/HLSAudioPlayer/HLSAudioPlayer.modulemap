@@ -1,0 +1,6 @@
+framework module HLSAudioPlayer {
+  umbrella header "HLSAudioPlayer-umbrella.h"
+
+  export *
+  module * { export * }
+}

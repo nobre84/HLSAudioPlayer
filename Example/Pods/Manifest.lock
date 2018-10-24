@@ -1,0 +1,39 @@
+PODS:
+  - HLSAudioPlayer (0.1.0)
+  - Nimble (7.3.1)
+  - OHHTTPStubs (6.1.0):
+    - OHHTTPStubs/Default (= 6.1.0)
+  - OHHTTPStubs/Core (6.1.0)
+  - OHHTTPStubs/Default (6.1.0):
+    - OHHTTPStubs/Core
+    - OHHTTPStubs/JSON
+    - OHHTTPStubs/NSURLSession
+    - OHHTTPStubs/OHPathHelpers
+  - OHHTTPStubs/JSON (6.1.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/NSURLSession (6.1.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/OHPathHelpers (6.1.0)
+
+DEPENDENCIES:
+  - HLSAudioPlayer (from `../`)
+  - Nimble
+  - OHHTTPStubs
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Nimble
+    - OHHTTPStubs
+
+EXTERNAL SOURCES:
+  HLSAudioPlayer:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  HLSAudioPlayer: 72a9d773c127738485f54852ff3977a2e6b25b3a
+  Nimble: 04f732da099ea4d153122aec8c2a88fd0c7219ae
+  OHHTTPStubs: 1e21c7d2c084b8153fc53d48400d8919d2d432d0
+
+PODFILE CHECKSUM: e2b2023a05172e7b23bcfe0ca310af42906ecaa6
+
+COCOAPODS: 1.5.3

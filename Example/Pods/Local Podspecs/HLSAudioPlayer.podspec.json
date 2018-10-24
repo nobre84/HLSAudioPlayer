@@ -1,0 +1,24 @@
+{
+  "name": "HLSAudioPlayer",
+  "version": "0.1.0",
+  "summary": "A mini framework for parsing and playing audio streams from HLS playlists.",
+  "description": "A mini framework for parsing and playing audio streams from HLS playlists.",
+  "homepage": "https://github.com/nobre84/HLSAudioPlayer",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Rafael Nobre": "nobre84@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/nobre84/HLSAudioPlayer.git",
+    "tag": "0.1.0"
+  },
+  "social_media_url": "https://twitter.com/nobre84",
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "HLSAudioPlayer/Sources/**/*.*",
+  "resources": "HLSAudioPlayer/Assets/**/*.*"
+}
