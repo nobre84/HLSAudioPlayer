@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.summary          = 'A mini framework for parsing and playing audio streams from HLS playlists.'
 
   s.description      = <<-DESC
-    A mini framework for parsing and playing audio streams from HLS playlists.
+    HLSAudioPlayer is a mini framework for parsing and playing audio streams from HLS playlists.
                        DESC
 
   s.homepage         = 'https://github.com/nobre84/HLSAudioPlayer'
@@ -14,7 +14,8 @@ Pod::Spec.new do |s|
   s.social_media_url = 'https://twitter.com/nobre84'
 
   s.ios.deployment_target = '8.0'
+  s.swift_version = '4.2'
 
   s.source_files = 'HLSAudioPlayer/Sources/**/*.*'
-  s.resources = 'HLSAudioPlayer/Assets/**/*.*'
+  #s.resources = 'HLSAudioPlayer/Assets/**/*.*'
 end
