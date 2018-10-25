@@ -45,7 +45,18 @@ class HLSParserTests: XCTestCase {
     }
     
     func testParserCanExtractAudioTracksWithURLsFromValidPlaylist() {
-        // TODO
+        expect { () -> Void in
+            let parser = try HLSParser(url: Stubs.url(of: "hls_index"))
+            expect(parser.tracks).notTo(beEmpty())
+            let firstTrack = parser.tracks.first!
+            expect(firstTrack.type) == .audio
+            expect(firstTrack.groupId) == "audio-0"
+            expect(firstTrack.name) == "Default"
+            expect(firstTrack.isAutoSelect) == true
+            expect(firstTrack.isDefault) == true
+            expect(firstTrack.url).notTo(beNil())
+            print(firstTrack.url)
+        }.notTo(throwError())
     }
     
     func testParserCanExtractAudioTracksAverageBitrateFromValidPlaylist() {
@@ -53,6 +64,10 @@ class HLSParserTests: XCTestCase {
     }
     
     func testParserCanExtractAudioTracksSegmentsFromValidPlaylist() {
+        // TODO
+    }
+    
+    func testParserMustFailToParsePlaylistsIncludingSegmentsDirectly() {
         // TODO
     }
 
