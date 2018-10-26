@@ -13,7 +13,7 @@ public class HLSMediaTrack {
     public let name: String
     public let isDefault: Bool
     public let isAutoSelect: Bool
-    public let url: URL?
+    public let uri: URL?
     public let data: HLSMediaTrackData?
     
     public init(type: HLSMediaType, groupId: String, name: String, isDefault: Bool = true, isAutoSelect: Bool = false, url: URL?, data: HLSMediaTrackData?) {
@@ -22,7 +22,7 @@ public class HLSMediaTrack {
         self.name = name
         self.isDefault = isDefault
         self.isAutoSelect = isAutoSelect
-        self.url = url
+        self.uri = url
         self.data = data
     }
 }

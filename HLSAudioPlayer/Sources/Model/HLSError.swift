@@ -14,5 +14,6 @@ public enum HLSError: Error {
     case unknownTrackMediaType
     case missingTrackGroupId
     case missingTrackName
-    case invalidTrackAutoSelectValue
+    case invalidTrackAutoSelectAttribute
+    case invalidTrackUriAttribute
 }

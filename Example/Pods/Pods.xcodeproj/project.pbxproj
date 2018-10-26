@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00225E05218310CE00AABBD7 /* Collection+SafeIndexing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00225E04218310CE00AABBD7 /* Collection+SafeIndexing.swift */; };
+		00225E132183204000AABBD7 /* String+Slicing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00225E122183204000AABBD7 /* String+Slicing.swift */; };
 		0609EE02B84BCD86BCAFEA8785628B91 /* HLSMediaSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A974C53777B0AB322D11585DE0ED84D /* HLSMediaSegment.swift */; };
 		06F38DD26D80484050C9ED86478406F2 /* BeLessThanOrEqual.swift in Sources */ = {isa = PBXBuildFile; fileRef = D370C4A73CED34E90F88F25686AD8F88 /* BeLessThanOrEqual.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		0C345DBBF5EF9ED046CB579FDD401A57 /* NimbleEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EF10B551598556E525AE395C5E890D /* NimbleEnvironment.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
@@ -148,6 +150,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00225E04218310CE00AABBD7 /* Collection+SafeIndexing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+SafeIndexing.swift"; sourceTree = "<group>"; };
+		00225E122183204000AABBD7 /* String+Slicing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Slicing.swift"; sourceTree = "<group>"; };
 		039BCC8998958878C49486B8D5D0C52B /* Match.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Match.swift; path = Sources/Nimble/Matchers/Match.swift; sourceTree = "<group>"; };
 		04968F3526D8E0532F18F7A720F9D459 /* OHPathHelpers.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OHPathHelpers.m; path = OHHTTPStubs/Sources/OHPathHelpers/OHPathHelpers.m; sourceTree = "<group>"; };
 		062E1050CF7B05B818575A3431B3E71D /* ThrowError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThrowError.swift; path = Sources/Nimble/Matchers/ThrowError.swift; sourceTree = "<group>"; };
@@ -187,11 +191,11 @@
 		3F4D8A69F13A7F69EFF0C8279D4FA228 /* Pods-HLSAudioPlayer_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HLSAudioPlayer_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		40FDEEBCBAF2407A3DA4A93E4C14C762 /* HLSMediaTrack.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HLSMediaTrack.swift; sourceTree = "<group>"; };
 		423D690FDF80F5073A50BC64BE9C344F /* OHHTTPStubs-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OHHTTPStubs-umbrella.h"; sourceTree = "<group>"; };
-		43EA89E053AFD34D56085CDFF35C1072 /* HLSAudioPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = HLSAudioPlayer.framework; path = HLSAudioPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		43EA89E053AFD34D56085CDFF35C1072 /* HLSAudioPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HLSAudioPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		444C051304F577787E140EBE060C3A27 /* Nimble-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Nimble-prefix.pch"; sourceTree = "<group>"; };
 		44E7E7586F8EA06365AF04A82E214140 /* CwlDarwinDefinitions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CwlDarwinDefinitions.swift; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlPreconditionTesting/CwlDarwinDefinitions.swift; sourceTree = "<group>"; };
 		450473330C298145E1CC6EB6C5B389E6 /* Pods-HLSAudioPlayer_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HLSAudioPlayer_Example-frameworks.sh"; sourceTree = "<group>"; };
-		4A7CE6DACC85A5B92D04B0DCCEEA90D6 /* mach_excServer.c */ = {isa = PBXFileReference; includeInIndex = 1; name = mach_excServer.c; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlMachBadInstructionHandler/mach_excServer.c; sourceTree = "<group>"; };
+		4A7CE6DACC85A5B92D04B0DCCEEA90D6 /* mach_excServer.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = mach_excServer.c; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlMachBadInstructionHandler/mach_excServer.c; sourceTree = "<group>"; };
 		4AE947E4862DA30C449FA25457250E75 /* EndWith.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EndWith.swift; path = Sources/Nimble/Matchers/EndWith.swift; sourceTree = "<group>"; };
 		4BF79F83EDCFB3E68F42DDE3DB7DCE04 /* Predicate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Predicate.swift; path = Sources/Nimble/Matchers/Predicate.swift; sourceTree = "<group>"; };
 		4CC4FBF904DDD4064EB47DDC70DDC43A /* Async.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Async.swift; path = Sources/Nimble/Matchers/Async.swift; sourceTree = "<group>"; };
@@ -216,7 +220,7 @@
 		71F7CB1B405948C03C86A9B524255B2D /* HLSError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HLSError.swift; sourceTree = "<group>"; };
 		73DF9A612E91F6DEB1F710A9DBD79E4A /* Contain.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Contain.swift; path = Sources/Nimble/Matchers/Contain.swift; sourceTree = "<group>"; };
 		75A396F547CBB1D0286CFD81E33ED7D0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7DBAF6E56E44622F15391319CC1FF034 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		7DBAF6E56E44622F15391319CC1FF034 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		7F303E3BE9BFC47594D7DC00991DCD1E /* Pods-HLSAudioPlayer_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HLSAudioPlayer_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		80B7AC8344B66220A756EB2C63DE612D /* BeEmpty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeEmpty.swift; path = Sources/Nimble/Matchers/BeEmpty.swift; sourceTree = "<group>"; };
 		835730DF1F9F923ED99D967EC15993B7 /* AssertionRecorder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssertionRecorder.swift; path = Sources/Nimble/Adapters/AssertionRecorder.swift; sourceTree = "<group>"; };
@@ -229,7 +233,7 @@
 		89C2788B4C1E96FBB43C65B40F42B488 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89DC365FEF314CAE9760892B813E187E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		9249B8926FB1C3B8C6BA0B51891B72BC /* CwlCatchException.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CwlCatchException.swift; path = Carthage/Checkouts/CwlCatchException/Sources/CwlCatchException/CwlCatchException.swift; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9410778A0FC97BE4F316EC7084E1AC00 /* HaveCount.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HaveCount.swift; path = Sources/Nimble/Matchers/HaveCount.swift; sourceTree = "<group>"; };
 		95A0AD19FF6B4317A3A9F3BDC57C3B7D /* Pods-HLSAudioPlayer_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-HLSAudioPlayer_Example.modulemap"; sourceTree = "<group>"; };
 		A059A47038843D75E0050E22B8877BF1 /* Pods-HLSAudioPlayer_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HLSAudioPlayer_Example-dummy.m"; sourceTree = "<group>"; };
@@ -242,8 +246,8 @@
 		AA246B5BB153B62B5EA83517DDB7A78C /* HLSParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HLSParser.swift; sourceTree = "<group>"; };
 		ACA5E6A4DFACB07DC4AABE7048703579 /* Nimble.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Nimble.xcconfig; sourceTree = "<group>"; };
 		B137361F037CD47A12E11A5D1F4E61BE /* Pods-HLSAudioPlayer_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HLSAudioPlayer_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		B253D27559F151D2FF5DD7B3CF0B4CF0 /* Pods_HLSAudioPlayer_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_HLSAudioPlayer_Tests.framework; path = "Pods-HLSAudioPlayer_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B5A5825FADE8E930CFA5184012550AB3 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		B253D27559F151D2FF5DD7B3CF0B4CF0 /* Pods_HLSAudioPlayer_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HLSAudioPlayer_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5A5825FADE8E930CFA5184012550AB3 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B646E6651F924BE5D61B7AAA4C6C9B7E /* OHHTTPStubs-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "OHHTTPStubs-dummy.m"; sourceTree = "<group>"; };
 		B835441ECD50235BA6C08DFC38253D18 /* NMBStringify.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NMBStringify.h; path = Sources/NimbleObjectiveC/NMBStringify.h; sourceTree = "<group>"; };
 		B85949D28FD56E352232E71AD025215B /* HLSAudioPlayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HLSAudioPlayer.swift; sourceTree = "<group>"; };
@@ -252,9 +256,9 @@
 		BAE1C96177A4AD5C37F67A46DBDCCFEC /* BeAKindOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeAKindOf.swift; path = Sources/Nimble/Matchers/BeAKindOf.swift; sourceTree = "<group>"; };
 		C08FD183944207BFBCF1CFF64B6BFA57 /* HLSAudioPlayer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HLSAudioPlayer-umbrella.h"; sourceTree = "<group>"; };
 		C3C717D9454D7F848D5E6EE9E924422A /* Expectation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Expectation.swift; path = Sources/Nimble/Expectation.swift; sourceTree = "<group>"; };
-		C451EF6C2255D0FC2DBE52424EDAD7ED /* OHHTTPStubs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = OHHTTPStubs.framework; path = OHHTTPStubs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C451EF6C2255D0FC2DBE52424EDAD7ED /* OHHTTPStubs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OHHTTPStubs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C57F2D9D187F8D616054834B2A7FFD37 /* HLSSegmentDownloader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HLSSegmentDownloader.swift; sourceTree = "<group>"; };
-		C6533D85593A8119EB9827FE837AEE5F /* Pods_HLSAudioPlayer_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_HLSAudioPlayer_Example.framework; path = "Pods-HLSAudioPlayer_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6533D85593A8119EB9827FE837AEE5F /* Pods_HLSAudioPlayer_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HLSAudioPlayer_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6757C44D1A8B62FD3A7062E345EA7F6 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
 		C9DF7A2589195A1E1D11B7DAF4D31303 /* HLSAudioPlayer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HLSAudioPlayer-prefix.pch"; sourceTree = "<group>"; };
 		CA26FEE69D5122E6EF99895CE867D6B5 /* Pods-HLSAudioPlayer_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HLSAudioPlayer_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -285,9 +289,9 @@
 		EF6BBAD85A656D2A689BDE69C18D9B3A /* ContainElementSatisfying.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ContainElementSatisfying.swift; path = Sources/Nimble/Matchers/ContainElementSatisfying.swift; sourceTree = "<group>"; };
 		F6A722E3B27725991B42E2CE434E6296 /* NMBExceptionCapture.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NMBExceptionCapture.h; path = Sources/NimbleObjectiveC/NMBExceptionCapture.h; sourceTree = "<group>"; };
 		F6B360DB78FDB4EA573BE5D3727D5C25 /* BeLessThan.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeLessThan.swift; path = Sources/Nimble/Matchers/BeLessThan.swift; sourceTree = "<group>"; };
-		F6FFA3F82429BCF96A13498308F20C9C /* HLSAudioPlayer.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = HLSAudioPlayer.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		F6FFA3F82429BCF96A13498308F20C9C /* HLSAudioPlayer.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = HLSAudioPlayer.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F9ECDFF6766B90B1EA38731D5C8EE624 /* OHPathHelpers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OHPathHelpers.h; path = OHHTTPStubs/Sources/OHPathHelpers/OHPathHelpers.h; sourceTree = "<group>"; };
-		FDAA96DA6B3DE97412952220BC614A12 /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Nimble.framework; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDAA96DA6B3DE97412952220BC614A12 /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -456,7 +460,6 @@
 				5EDE599DDA6619D1D8897F505BD0151D /* XCTestObservationCenter+Register.m */,
 				74D1E0D78488D55544EB625C3B3D5B7F /* Support Files */,
 			);
-			name = Nimble;
 			path = Nimble;
 			sourceTree = "<group>";
 		};
@@ -516,7 +519,6 @@
 				FB40E73F0A4094CBA690B8B1D1D31585 /* OHPathHelpers */,
 				D8BE4DDA22F05156C7C05E751514EB8A /* Support Files */,
 			);
-			name = OHHTTPStubs;
 			path = OHHTTPStubs;
 			sourceTree = "<group>";
 		};
@@ -539,6 +541,8 @@
 			children = (
 				AA246B5BB153B62B5EA83517DDB7A78C /* HLSParser.swift */,
 				C57F2D9D187F8D616054834B2A7FFD37 /* HLSSegmentDownloader.swift */,
+				00225E04218310CE00AABBD7 /* Collection+SafeIndexing.swift */,
+				00225E122183204000AABBD7 /* String+Slicing.swift */,
 			);
 			name = Support;
 			path = HLSAudioPlayer/Sources/Support;
@@ -988,9 +992,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00225E05218310CE00AABBD7 /* Collection+SafeIndexing.swift in Sources */,
 				9842F7D877EB97B550A246E5981F2A59 /* HLSAudioPlayer-dummy.m in Sources */,
 				A1D8725A0B502D810F20640E8D3B0748 /* HLSAudioPlayer.swift in Sources */,
 				9110478C1178C1FEB40E722D95D0590D /* HLSError.swift in Sources */,
+				00225E132183204000AABBD7 /* String+Slicing.swift in Sources */,
 				0609EE02B84BCD86BCAFEA8785628B91 /* HLSMediaSegment.swift in Sources */,
 				69D71AF0694243CF5BB66870EE10241D /* HLSMediaTrack.swift in Sources */,
 				5E730548F0287D8ADAB7CFC8550C298E /* HLSMediaTrackData.swift in Sources */,
@@ -1129,8 +1135,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1162,8 +1167,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1325,8 +1329,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1422,8 +1425,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
