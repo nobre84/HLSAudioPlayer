@@ -8,7 +8,7 @@
 
 import XCTest
 import Nimble
-import HLSAudioPlayer
+@testable import HLSAudioPlayer
 
 class HLSParserTests: XCTestCase {
 
@@ -46,7 +46,7 @@ class HLSParserTests: XCTestCase {
     
     func testParserCanUnderstandAnyKindOfNewlineCharacters() {
         expect { () -> Void in
-            let parser = try HLSParser(url: Stubs.url(of: "hls_index_newline_characters"))
+            let parser = try HLSParser(url: Stubs.url(of: "hls_index_crlf_newlines"))
             expect(parser.tracks).notTo(beEmpty())
         }.notTo(throwError())
     }
@@ -69,13 +69,13 @@ class HLSParserTests: XCTestCase {
     func testParserMustFailToParsePlaylistsIncludingUrisForClosedCaptionsTracks() {
         expect { () -> Void in
             _ = try HLSParser(url: Stubs.url(of: "invalid_track_uri"))
-            }.to(throwError(HLSError.invalidTrackUriAttribute))
+        }.to(throwError(HLSError.invalidTrackUriAttribute))
     }
     
     func testParserMustFailToParsePlaylistsMissingTrackType() {
         expect { () -> Void in
             _ = try HLSParser(url: Stubs.url(of: "invalid_track_missing_type"))
-            }.to(throwError(HLSError.missingTrackMediaType))
+        }.to(throwError(HLSError.missingTrackMediaType))
     }
     
     func testParserMustFailToParsePlaylistsUnknownTrackType() {
@@ -108,6 +108,28 @@ class HLSParserTests: XCTestCase {
         }.to(throwError(HLSError.invalidTrackAutoSelectAttribute))
     }
     
+    func testParserMustIgnoreInvalidDefaultValue() {
+        let trackAttributes = """
+        TYPE=AUDIO,GROUP-ID="audio-0",NAME="Default",AUTOSELECT=BANANA,DEFAULT=BANANA
+        """
+        expect { () -> Void in
+            let parser = HLSParser()
+            let track = try parser.parseTrack(from: trackAttributes)
+            expect(track.isDefault) == true
+        }.to(throwError())
+    }
+    
+    func testParserMustIgnoreInvalidAutoselectValue() {
+        let trackAttributes = """
+        TYPE=AUDIO,GROUP-ID="audio-0",NAME="Default",AUTOSELECT=BANANA,DEFAULT=YES
+        """
+        expect { () -> Void in
+            let parser = HLSParser()
+            let track = try parser.parseTrack(from: trackAttributes)
+            expect(track.isAutoSelect) == false
+        }.to(throwError())
+    }
+    
     func testParserMustParseTrackDataWhenUriIsPresent() {
         expect { () -> Void in
             let parser = try HLSParser(url: Stubs.url(of: "hls_index"))
@@ -131,19 +153,267 @@ class HLSParserTests: XCTestCase {
         
     }
     
-    func testParserCanExtractAudioTracksBitratesFromValidPlaylist() {
+    func testParserMustFailToParseTrackDataWithoutHeader() {
         expect { () -> Void in
-            let parser = try HLSParser(url: Stubs.url(of: "hls_index"))
-//            expect(parser.tracks.first?.data?.averageBitrate) > 100
-//            expect(parser.tracks.first?.data?.peakBitrate) > 100
+            _ = try HLSParser(url: Stubs.url(of: "hls_index_invalid_track"))
+        }.to(throwError(HLSError.invalidPlaylist))
+    }
+    
+    func testParserMustFailToParseTrackDataWithoutHeaders() {
+        expect { () -> Void in
+            _ = try HLSParser(url: Stubs.url(of: "hls_index_no_track_data_headers"))
+        }.to(throwError(HLSError.missingTrackDataHeaders))
+    }
+    
+    func testParserMustFailToParseTrackDataWithoutVersion() {
+        expect { () -> Void in
+            _ = try HLSParser(url: Stubs.url(of: "hls_index_missing_track_data_version"))
+        }.to(throwError(HLSError.missingTrackDataVersion))
+    }
+    
+    func testParserMustFailToParseTrackDataWithInvalidVersion() {
+        expect { () -> Void in
+            _ = try HLSParser(url: Stubs.url(of: "hls_index_invalid_track_data_version"))
+        }.to(throwError(HLSError.invalidTrackDataVersion))
+    }
+    
+    func testParserMustFailToParseTrackDataWithoutTargetDuration() {
+        expect { () -> Void in
+            _ = try HLSParser(url: Stubs.url(of: "hls_index_missing_target_duration"))
+        }.to(throwError(HLSError.missingTrackDataTargetDuration))
+    }
+    
+    func testParserMustFailToParseTrackDataWithInvalidTargetDuration() {
+        expect { () -> Void in
+            _ = try HLSParser(url: Stubs.url(of: "hls_index_invalid_target_duration"))
+            }.to(throwError(HLSError.invalidTrackDataTargetDuration))
+    }
+    
+    func testParserMayParseTrackDataWithoutMediaSequence() {
+        expect { () -> Void in
+            let parser = try HLSParser(url: Stubs.url(of: "hls_index_missing_media_sequence"))
+            expect(parser.tracks.first?.data?.mediaSequence) == 0
         }.notTo(throwError())
     }
     
-    func testParserCanExtractAudioTracksSegmentsFromValidPlaylist() {
+    func testParserMustFailToParseTrackDataWithInvalidMediaSequence() {
+        expect { () -> Void in
+            _ = try HLSParser(url: Stubs.url(of: "hls_index_invalid_media_sequence"))
+        }.to(throwError(HLSError.invalidTrackDataMediaSequence))
+    }
+    
+    func testParserMayParseTrackDataWithoutAllowCache() {
+        let trackDataHeaders = """
+        #EXTM3U
+        #EXT-X-VERSION:4
+        #EXT-X-TARGETDURATION:11
+        #EXTINF:10.100689,
+        #EXT-X-BYTERANGE:272976@0
+        hls_a192K.ts
+        #EXT-X-ENDLIST
+        """
+        expect { () -> Void in
+            let parser = HLSParser()
+            let trackData = try parser.parseTrackData(from: trackDataHeaders)
+            expect(trackData.allowsCache).to(beNil())
+        }.notTo(throwError())
+    }
+    
+    func testParserMustParseTrackDataWithValidAllowCacheValue() {
+        let trackDataHeaders = """
+        #EXTM3U
+        #EXT-X-VERSION:4
+        #EXT-X-TARGETDURATION:11
+        #EXT-X-ALLOW-CACHE:YES
+        #EXTINF:10.100689,
+        #EXT-X-BYTERANGE:272976@0
+        hls_a192K.ts
+        #EXT-X-ENDLIST
+        """
+        expect { () -> Void in
+            let parser = HLSParser()
+            let trackData = try parser.parseTrackData(from: trackDataHeaders)
+            expect(trackData.allowsCache) == true
+        }.notTo(throwError())
+    }
+    
+    func testParserCanParseTrackBitratesFromValidPlaylist() {
         expect { () -> Void in
             let parser = try HLSParser(url: Stubs.url(of: "hls_index"))
-//            expect(parser.tracks.first?.data?.segments).notTo(beEmpty())
+            let hls192AvgBitrate = parser.tracks[0].data?.averageBitrate
+            let hls192PeakBitrate = parser.tracks[0].data?.peakBitrate
+            let hls256AvgBitrate = parser.tracks[1].data?.averageBitrate
+            let hls256PeakBitrate = parser.tracks[1].data?.peakBitrate
+            expect(hls192AvgBitrate) == 210 ± 1
+            expect(hls192PeakBitrate) > hls192AvgBitrate!
+            expect(hls256AvgBitrate) == 282 ± 1
+            expect(hls256PeakBitrate) > hls256AvgBitrate!
+        }.notTo(throwError())
+    }
+    
+    func testParserCanParseTrackSegmentsFromValidPlaylist() {
+        expect { () -> Void in
+            let parser = try HLSParser(url: Stubs.url(of: "hls_index"))
+            expect(parser.tracks[0].data?.segments.count) == 23
+            expect(parser.tracks[1].data?.segments.count) == 23
         }.notTo(throwError())
     }
 
+    func testParserCanParseTrackSegmentsWithTitles() {
+        expect { () -> Void in
+            let parser = try HLSParser(url: Stubs.url(of: "hls_index"))
+            expect(parser.tracks.first?.data?.segments).notTo(beEmpty())
+        }.notTo(throwError())
+    }
+    
+    func testParserMustFailToParseSegmentWithoutDuration() {
+        let trackDataHeaders = """
+        #EXTM3U
+        #EXT-X-VERSION:4
+        #EXT-X-TARGETDURATION:11
+        #EXTINF:,
+        #EXT-X-BYTERANGE:272976@0
+        hls_a192K.ts
+        #EXT-X-ENDLIST
+        """
+        expect { () -> Void in
+            let parser = HLSParser()
+            _ = try parser.parseTrackData(from: trackDataHeaders)
+        }.to(throwError(HLSError.missingSegmentDuration))
+    }
+    
+    func testParserMustFailToParseSegmentWithInvalidDuration() {
+        let trackDataHeaders = """
+        #EXTM3U
+        #EXT-X-VERSION:4
+        #EXT-X-TARGETDURATION:11
+        #EXTINF:abc
+        #EXT-X-BYTERANGE:272976@0
+        hls_a192K.ts
+        #EXT-X-ENDLIST
+        """
+        expect { () -> Void in
+            let parser = HLSParser()
+            _ = try parser.parseTrackData(from: trackDataHeaders)
+        }.to(throwError(HLSError.invalidSegmentDuration))
+    }
+    
+    func testParserMustParseSegmentWithTitle() {
+        let trackDataHeaders = """
+        #EXTM3U
+        #EXT-X-VERSION:4
+        #EXT-X-TARGETDURATION:11
+        #EXTINF:10.100689,"UTF8 title 😀"
+        #EXT-X-BYTERANGE:272976@0
+        hls_a192K.ts
+        #EXT-X-ENDLIST
+        """
+        expect { () -> Void in
+            let parser = HLSParser()
+            let trackData = try parser.parseTrackData(from: trackDataHeaders)
+            expect(trackData.segments[0].title) == "\"UTF8 title 😀\""
+        }.notTo(throwError())
+    }
+    
+    func testParserMustFailToParseSegmentWithoutUri() {
+        let trackDataHeaders = """
+        #EXTM3U
+        #EXT-X-VERSION:4
+        #EXT-X-TARGETDURATION:11
+        #EXTINF:10.100689,
+        #EXT-X-BYTERANGE:272976@0
+        #EXT-X-ENDLIST
+        """
+        expect { () -> Void in
+            let parser = HLSParser()
+            _ = try parser.parseTrackData(from: trackDataHeaders)
+        }.to(throwError(HLSError.missingSegmentUri))
+    }
+    
+    func testParserMustFailToParseSegmentWithInvalidUri() {
+        let trackDataHeaders = """
+        #EXTM3U
+        #EXT-X-VERSION:4
+        #EXT-X-TARGETDURATION:11
+        #EXTINF:10.100689,
+        #EXT-X-BYTERANGE:272976@0
+        invalid uri with spaces.ts
+        #EXT-X-ENDLIST
+        """
+        expect { () -> Void in
+            let parser = HLSParser()
+            _ = try parser.parseTrackData(from: trackDataHeaders)
+        }.to(throwError(HLSError.invalidSegmentUri))
+    }
+    
+    func testParserMayParseSegmentWithoutByteRange() {
+        let trackDataHeaders = """
+        #EXTM3U
+        #EXT-X-VERSION:4
+        #EXT-X-TARGETDURATION:11
+        #EXTINF:10.100689,
+        hls_a192K.ts
+        #EXT-X-ENDLIST
+        """
+        expect { () -> Void in
+            let parser = HLSParser()
+            let trackData = try parser.parseTrackData(from: trackDataHeaders)
+            expect(trackData.segments[0].byteRange).to(beNil())
+            expect(trackData.averageBitrate) == 0
+            expect(trackData.peakBitrate) == 0
+            expect(trackData.segments[0].bitrate) == 0
+        }.notTo(throwError())
+    }
+    
+    func testParserMayParseSegmentWithoutByteRangeOffset() {
+        let trackDataHeaders = """
+        #EXTM3U
+        #EXT-X-VERSION:4
+        #EXT-X-TARGETDURATION:11
+        #EXTINF:10.100689,
+        #EXT-X-BYTERANGE:272976
+        hls_a192K.ts
+        #EXT-X-ENDLIST
+        """
+        expect { () -> Void in
+            let parser = HLSParser()
+            let trackData = try parser.parseTrackData(from: trackDataHeaders)
+            expect(trackData.segments[0].byteRange?.location) == 0
+        }.notTo(throwError())
+    }
+    
+    func testParserMustParseSegmentWithByteRangeFully() {
+        let trackDataHeaders = """
+        #EXTM3U
+        #EXT-X-VERSION:4
+        #EXT-X-TARGETDURATION:11
+        #EXTINF:10.100689,
+        #EXT-X-BYTERANGE:272976@1024
+        hls_a192K.ts
+        #EXT-X-ENDLIST
+        """
+        expect { () -> Void in
+            let parser = HLSParser()
+            let trackData = try parser.parseTrackData(from: trackDataHeaders)
+            expect(trackData.segments[0].byteRange?.length) == 272976
+            expect(trackData.segments[0].byteRange?.location) == 1024
+        }.notTo(throwError())
+    }
+    
+    func testParserMustFailToParseSegmentWithInvalidByteRange() {
+        let trackDataHeaders = """
+        #EXTM3U
+        #EXT-X-VERSION:4
+        #EXT-X-TARGETDURATION:11
+        #EXTINF:10.100689,
+        #EXT-X-BYTERANGE:abcd@0
+        hls_a192K.ts
+        #EXT-X-ENDLIST
+        """
+        expect { () -> Void in
+            let parser = HLSParser()
+            _ = try parser.parseTrackData(from: trackDataHeaders)
+        }.to(throwError(HLSError.invalidSegmentByteRange))
+    }
+    
 }

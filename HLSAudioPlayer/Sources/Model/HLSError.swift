@@ -16,4 +16,15 @@ public enum HLSError: Error {
     case missingTrackName
     case invalidTrackAutoSelectAttribute
     case invalidTrackUriAttribute
+    case missingTrackDataHeaders
+    case missingTrackDataVersion
+    case invalidTrackDataVersion
+    case invalidTrackDataMediaSequence
+    case missingTrackDataTargetDuration
+    case invalidTrackDataTargetDuration
+    case missingSegmentDuration
+    case invalidSegmentDuration
+    case missingSegmentUri
+    case invalidSegmentUri
+    case invalidSegmentByteRange
 }
