@@ -41,6 +41,7 @@
 		00DCAF092184934A005EB797 /* hls_index_invalid_track_data_version.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = 00DCAEEB2184934A005EB797 /* hls_index_invalid_track_data_version.m3u8 */; };
 		00DCAF0A2184934A005EB797 /* hls_index.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = 00DCAEEC2184934A005EB797 /* hls_index.m3u8 */; };
 		00DCAF0B2184934A005EB797 /* hls_index_crlf_newlines.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = 00DCAEED2184934A005EB797 /* hls_index_crlf_newlines.m3u8 */; };
+		00DCAF0D2185D574005EB797 /* HLSSegmentDownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DCAF0C2185D574005EB797 /* HLSSegmentDownloaderTests.swift */; };
 		35429E8F74947C32CC241D34 /* Pods_HLSAudioPlayer_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F520EA81370C75B94D3A896 /* Pods_HLSAudioPlayer_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
@@ -95,6 +96,7 @@
 		00DCAEEB2184934A005EB797 /* hls_index_invalid_track_data_version.m3u8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hls_index_invalid_track_data_version.m3u8; sourceTree = "<group>"; };
 		00DCAEEC2184934A005EB797 /* hls_index.m3u8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hls_index.m3u8; sourceTree = "<group>"; };
 		00DCAEED2184934A005EB797 /* hls_index_crlf_newlines.m3u8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hls_index_crlf_newlines.m3u8; sourceTree = "<group>"; };
+		00DCAF0C2185D574005EB797 /* HLSSegmentDownloaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLSSegmentDownloaderTests.swift; sourceTree = "<group>"; };
 		1F520EA81370C75B94D3A896 /* Pods_HLSAudioPlayer_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HLSAudioPlayer_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2495D774928E9FE5D542101B /* Pods-HLSAudioPlayer_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HLSAudioPlayer_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HLSAudioPlayer_Tests/Pods-HLSAudioPlayer_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		341F6A536529BA1A41A970D8 /* Pods-HLSAudioPlayer_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HLSAudioPlayer_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HLSAudioPlayer_Example/Pods-HLSAudioPlayer_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				0018833321808DF700D34F86 /* HLSParserTests.swift */,
+				00DCAF0C2185D574005EB797 /* HLSSegmentDownloaderTests.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -530,6 +533,7 @@
 			files = (
 				0018834621808DF700D34F86 /* Stubs.swift in Sources */,
 				0018833F21808DF700D34F86 /* HLSParserTests.swift in Sources */,
+				00DCAF0D2185D574005EB797 /* HLSSegmentDownloaderTests.swift in Sources */,
 				0018834521808DF700D34F86 /* Bundle+Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
