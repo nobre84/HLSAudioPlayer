@@ -20,5 +20,10 @@
     "ios": "8.0"
   },
   "swift_version": "4.2",
-  "source_files": "HLSAudioPlayer/Sources/**/*.*"
+  "source_files": "HLSAudioPlayer/Sources/**/*.*",
+  "dependencies": {
+    "RNConcurrentBlockOperation": [
+
+    ]
+  }
 }

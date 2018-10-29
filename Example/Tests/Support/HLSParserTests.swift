@@ -160,28 +160,13 @@ class HLSParserTests: XCTestCase {
     
     func testParserCanFollowRemoteUriToTrackData() {
         stub(condition: isHost("stub.com")) { request in
-            if let range = self.parseRange(from: request.value(forHTTPHeaderField: "Range")) {
-                return OHHTTPStubsResponse(data: Data(count: range.length), statusCode:206, headers:["Content-Type": "video/MP2T"])
-            }
-            
-            let stubPath = OHPathForFile("hls_index.m3u8", type(of: self))
+            let stubPath = OHPathForFile(request.url!.lastPathComponent, type(of: self))
             return fixture(filePath: stubPath!, headers: ["Content-Type":"application/x-mpegURL"])
         }
         
         expect { () -> Void in
-            let parser = try HLSParser(url: URL(string: "https://stub.com/hls_index.m3u8")!)
-            expect(parser.tracks.first?.data).to(beNil())
+            _ = try HLSParser(url: URL(string: "https://stub.com/hls_index.m3u8")!)
         }.notTo(throwError())
-    }
-    
-    private func parseRange(from httpHeader: String?) -> NSRange? {
-        guard let httpHeader = httpHeader else { return nil }
-        
-        guard let startString = httpHeader.slice(from: "bytes=", to: "-"),
-            let start = Int(startString),
-            let endString = httpHeader.slice(from: "="),
-            let end = Int(endString) else { return nil }
-        return NSRange(location: start, length: end - start)
     }
     
     func testParserMustFailToParseTrackDataWithoutHeader() {

@@ -30,8 +30,6 @@ public class HLSParser {
     private var url: URL?
     private var playlist: String?
     
-    public var isParsed: Bool = false
-    
     public var tracks: [HLSMediaTrack] = []
     
     public init(url: URL) throws {
@@ -39,7 +37,7 @@ public class HLSParser {
         try parse()
     }
     
-    public init() {
+    init() {
     }
     
     public func parse() throws {
@@ -50,7 +48,6 @@ public class HLSParser {
             self.playlist = playlist
             
             try parseTracks(from: playlist)
-            isParsed = true
         }
     }
     

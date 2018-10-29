@@ -6,41 +6,70 @@
 //
 
 import UIKit
+import RNConcurrentBlockOperation
 
 public class HLSSegmentDownloader {
-    private let queue: OperationQueue = OperationQueue()
-    private var writers: [URL: FileHandle] = [:]
     
     public init() {
     }
     
-    public func downloadSegments(of track: HLSMediaTrackData, completion: @escaping (() throws -> [URL]) -> Void) {
+    public func downloadSegments(of track: HLSMediaTrackData, completion: @escaping (@escaping () throws -> [URL]) -> Void) {
+        let queue = OperationQueue()
+        queue.maxConcurrentOperationCount = 2
+        
+        var operations = [Operation]()
+        
+        var writers: [URL: FileHandle] = [:]
+        
         track.segments.forEach { segment in
-            var urlRequest = URLRequest(url: segment.uri)
-            if let byteRange = segment.byteRange {
-                urlRequest.addValue("bytes=\(byteRange.location)-\(byteRange.length)", forHTTPHeaderField: "Range")
-            }
-            
-            URLSession.shared.dataTask(with: urlRequest, completionHandler: { data, response, error in
-                if let error = error {
-                    return completion { throw error }
+            operations.append(RNConcurrentBlockOperation() { operationFinished in
+                var urlRequest = URLRequest(url: segment.uri)
+                if let byteRange = segment.byteRange {
+                    urlRequest.addValue(self.createRangeHeader(with: byteRange), forHTTPHeaderField: "Range")
                 }
-                if let data = data {
-                    do {
-                        var writer = self.writers[segment.uri]
-                        if writer == nil {
-                            writer = try FileHandle(forUpdating: segment.uri)
-                            self.writers[segment.uri] = writer
-                        }
-                        writer?.seek(toFileOffset: UInt64(segment.byteRange?.location ?? 0))
-                        writer?.write(data)
-                    }
-                    catch {
-                        print(error)
+                
+                URLSession.shared.dataTask(with: urlRequest, completionHandler: { data, response, error in
+                    if let error = error {
                         completion { throw error }
+                        operationFinished?(nil)
+                        return
                     }
-                }
-            }).resume()
+                    if let data = data {
+                        do {
+                            var writer = writers[segment.uri]
+                            if writer == nil {
+                                writer = try FileHandle(forWritingTo: segment.uri)
+                                writers[segment.uri] = writer
+                            }
+                            writer?.seek(toFileOffset: UInt64(segment.byteRange?.location ?? 0))
+                            writer?.write(data)
+                            operationFinished?(nil)
+                        }
+                        catch {
+                            print(error)
+                            completion { throw error }
+                            operationFinished?(nil)
+                        }
+                    }
+                }).resume()
+            })
         }
+        
+        let joinOperation = RNConcurrentBlockOperation() { finished in
+            finished?(nil)
+        }
+        
+        operations.forEach {
+            joinOperation?.addDependency($0)
+            queue.addOperation($0)
+        }
+        
+        queue.addOperation(joinOperation!)
     }
+    
+    func createRangeHeader(with range: NSRange) -> String {
+        return "bytes=\(range.location)-\(range.location + range.length)"
+    }
+    
+    
 }

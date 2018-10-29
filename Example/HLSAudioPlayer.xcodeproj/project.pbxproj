@@ -459,12 +459,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-HLSAudioPlayer_Example/Pods-HLSAudioPlayer_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/HLSAudioPlayer/HLSAudioPlayer.framework",
+				"${BUILT_PRODUCTS_DIR}/RNConcurrentBlockOperation/RNConcurrentBlockOperation.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HLSAudioPlayer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RNConcurrentBlockOperation.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

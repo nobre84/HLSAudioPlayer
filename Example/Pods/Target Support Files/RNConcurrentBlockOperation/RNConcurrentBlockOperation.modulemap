@@ -1,0 +1,6 @@
+framework module RNConcurrentBlockOperation {
+  umbrella header "RNConcurrentBlockOperation-umbrella.h"
+
+  export *
+  module * { export * }
+}
