@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0017B0552189C1E300D10D09 /* stub.ts in Resources */ = {isa = PBXBuildFile; fileRef = 0017B0542189C09B00D10D09 /* stub.ts */; };
 		0018833F21808DF700D34F86 /* HLSParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0018833321808DF700D34F86 /* HLSParserTests.swift */; };
 		0018834521808DF700D34F86 /* Bundle+Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0018833B21808DF700D34F86 /* Bundle+Tests.swift */; };
 		0018834621808DF700D34F86 /* Stubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0018833C21808DF700D34F86 /* Stubs.swift */; };
@@ -62,6 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0017B0542189C09B00D10D09 /* stub.ts */ = {isa = PBXFileReference; lastKnownFileType = file; path = stub.ts; sourceTree = "<group>"; };
 		0018833321808DF700D34F86 /* HLSParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSParserTests.swift; sourceTree = "<group>"; };
 		0018833B21808DF700D34F86 /* Bundle+Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Tests.swift"; sourceTree = "<group>"; };
 		0018833C21808DF700D34F86 /* Stubs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stubs.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 		0018833521808DF700D34F86 /* Stubs */ = {
 			isa = PBXGroup;
 			children = (
+				0017B0542189C09B00D10D09 /* stub.ts */,
 				00DCAEEA2184934A005EB797 /* empty.m3u8 */,
 				00DCAEDB21849349005EB797 /* hls_a192K_v4_invalid_media_sequence.m3u8 */,
 				00DCAED921849349005EB797 /* hls_a192K_v4_invalid_target_duration.m3u8 */,
@@ -414,6 +417,7 @@
 				00DCAF002184934A005EB797 /* invalid_track_unknown_type.m3u8 in Resources */,
 				00DCAEFE2184934A005EB797 /* invalid.m3u8 in Resources */,
 				00DCAEFA2184934A005EB797 /* invalid_track_unknown_attribute.m3u8 in Resources */,
+				0017B0552189C1E300D10D09 /* stub.ts in Resources */,
 				00DCAEF12184934A005EB797 /* hls_index_no_track_data_headers.m3u8 in Resources */,
 				00DCAEFD2184934A005EB797 /* invalid_track_missing_name.m3u8 in Resources */,
 				00DCAF062184934A005EB797 /* hls_a192K_v4_missing_track_data_version.m3u8 in Resources */,
@@ -675,6 +679,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HLSAudioPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
@@ -690,6 +695,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HLSAudioPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";

@@ -18,13 +18,33 @@ class HLSSegmentDownloaderTests: XCTestCase {
     func testCanDownloadSegmentData() {
         stub(condition: isHost("stub.com")) { request in
             if let range = self.parseRange(from: request.value(forHTTPHeaderField: "Range")) {
-                return OHHTTPStubsResponse(data: Data(count: range.length), statusCode:206, headers:["Content-Type": "video/MP2T"])
+                let handle = FileHandle(forReadingAtPath: OHPathForFile("stub.ts", type(of: self))!)
+                handle?.seek(toFileOffset: UInt64(range.location))
+                let segmentData = handle?.readData(ofLength: range.length)
+                return OHHTTPStubsResponse(data: segmentData!, statusCode:206, headers:["Content-Type": "video/MP2T"])
             }
 
             let stubPath = OHPathForFile(request.url!.lastPathComponent, type(of: self))
             return fixture(filePath: stubPath!, headers: ["Content-Type":"application/x-mpegURL"])
         }
         
+        // Tests it can run without caches first
+        do {
+            try clearCaches()
+        }
+        catch {
+            fail("Failed to clear caches")
+        }
+        
+        downloadExpectations()
+        
+        // Now test again, with a warm cache
+        
+        downloadExpectations()
+        
+    }
+    
+    private func downloadExpectations() {
         expect { () -> Void in
             let parser = try HLSParser(url: URL(string: "https://stub.com/hls_index.m3u8")!)
             let trackData = parser.tracks[0].data!
@@ -34,7 +54,13 @@ class HLSSegmentDownloaderTests: XCTestCase {
                     expect { () -> Void in
                         let urls = try response()
                         expect(urls.count) == 1
-                    }.notTo(throwError())
+                        expect(urls[0].isFileURL) == true
+                        let segmentData = try Data(contentsOf: urls[0])
+                        let totalSize = trackData.segments.map { $0.byteRange?.length ?? 0 }.reduce(0, +)
+                        expect(segmentData.count) == totalSize
+                        let stubbedData = Stubs.data(from: "stub", extension: "ts")
+                        expect(stubbedData) == segmentData
+                        }.notTo(throwError())
                     done()
                 }
             }
@@ -59,6 +85,16 @@ class HLSSegmentDownloaderTests: XCTestCase {
             let endString = httpHeader.slice(from: "-"),
             let end = Int(endString) else { return nil }
         return NSRange(location: start, length: end - start)
+    }
+    
+    private func clearCaches() throws {
+        let manager = FileManager.default
+        let cachesDir = try manager.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+        let files = try manager.contentsOfDirectory(at: cachesDir, includingPropertiesForKeys: nil)
+        print("Clearing cache with \(files) files")
+        for url in files {
+            try manager.removeItem(at: url)
+        }
     }
     
 }
