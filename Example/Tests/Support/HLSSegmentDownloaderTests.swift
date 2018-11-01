@@ -17,13 +17,14 @@ class HLSSegmentDownloaderTests: XCTestCase {
     
     func testCanDownloadSegmentData() {
         stub(condition: isHost("stub.com")) { request in
+            // Stubbing segments
             if let range = self.parseRange(from: request.value(forHTTPHeaderField: "Range")) {
                 let handle = FileHandle(forReadingAtPath: OHPathForFile("stub.ts", type(of: self))!)
                 handle?.seek(toFileOffset: UInt64(range.location))
                 let segmentData = handle?.readData(ofLength: range.length)
                 return OHHTTPStubsResponse(data: segmentData!, statusCode:206, headers:["Content-Type": "video/MP2T"])
             }
-
+            // Stubbing playlists
             let stubPath = OHPathForFile(request.url!.lastPathComponent, type(of: self))
             return fixture(filePath: stubPath!, headers: ["Content-Type":"application/x-mpegURL"])
         }
@@ -36,15 +37,14 @@ class HLSSegmentDownloaderTests: XCTestCase {
             fail("Failed to clear caches")
         }
         
-        downloadExpectations()
+        expectationsForTestCanDownloadSegmentData()
         
         // Now test again, with a warm cache
         
-        downloadExpectations()
-        
+        expectationsForTestCanDownloadSegmentData()
     }
     
-    private func downloadExpectations() {
+    private func expectationsForTestCanDownloadSegmentData() {
         expect { () -> Void in
             let parser = try HLSParser(url: URL(string: "https://stub.com/hls_index.m3u8")!)
             let trackData = parser.tracks[0].data!
@@ -60,7 +60,34 @@ class HLSSegmentDownloaderTests: XCTestCase {
                         expect(segmentData.count) == totalSize
                         let stubbedData = Stubs.data(from: "stub", extension: "ts")
                         expect(stubbedData) == segmentData
-                        }.notTo(throwError())
+                    }.notTo(throwError())
+                    done()
+                }
+            }
+        }.notTo(throwError())
+    }
+    
+    func testDownloaderFailsWithoutNetwork() {
+        stub(condition: isHost("stub.com")) { request in
+            // Stubbing segments
+            if self.parseRange(from: request.value(forHTTPHeaderField: "Range")) != nil {
+                let notConnectedError = NSError(domain: NSURLErrorDomain, code: URLError.notConnectedToInternet.rawValue)
+                return OHHTTPStubsResponse(error: notConnectedError)
+            }
+            // Stubbing playlists
+            let stubPath = OHPathForFile(request.url!.lastPathComponent, type(of: self))
+            return fixture(filePath: stubPath!, headers: ["Content-Type":"application/x-mpegURL"])
+        }
+        
+        expect { () -> Void in
+            let parser = try HLSParser(url: URL(string: "https://stub.com/hls_index.m3u8")!)
+            let trackData = parser.tracks[0].data!
+            
+            waitUntil { done in
+                self.downloader.downloadSegments(of: trackData) { response in
+                    expect { () -> Void in
+                        _ = try response()
+                    }.to(throwError())
                     done()
                 }
             }

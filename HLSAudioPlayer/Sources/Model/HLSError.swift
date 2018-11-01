@@ -27,4 +27,5 @@ public enum HLSError: Error {
     case missingSegmentUri
     case invalidSegmentUri
     case invalidSegmentByteRange
+    case multipleErrors([Error])
 }

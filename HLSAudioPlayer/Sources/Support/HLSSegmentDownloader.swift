@@ -11,22 +11,18 @@ import RNConcurrentBlockOperation
 public class HLSSegmentDownloader {
 
     private var writers: [URL: FileHandle] = [:]
+    private var maxConcurrentDownloadCount: Int
     
-    public init() {
+    public init(maxConcurrentDownloadCount: Int = 2) {
+        self.maxConcurrentDownloadCount = maxConcurrentDownloadCount
     }
     
     public func downloadSegments(of track: HLSMediaTrackData, completion: @escaping (@escaping () throws -> [URL]) -> Void) {
         let queue = OperationQueue()
-        queue.maxConcurrentOperationCount = 2
+        queue.maxConcurrentOperationCount = maxConcurrentDownloadCount
         
         var operations = [Operation]()
-        
-        do {
-            try createSegmentFiles(of: track)
-        }
-        catch {
-            completion { throw error }
-        }
+        var errors = [Error]()
         
         track.segments.forEach { segment in
             operations.append(RNConcurrentBlockOperation() { finished in
@@ -37,7 +33,7 @@ public class HLSSegmentDownloader {
 
                 URLSession.shared.dataTask(with: urlRequest, completionHandler: { data, response, error in
                     if let error = error {
-                        completion { throw error }
+                        errors.append(error)
                         finished?(nil)
                         return
                     }
@@ -49,7 +45,7 @@ public class HLSSegmentDownloader {
                             finished?(nil)
                         }
                         catch {
-                            completion { throw error }
+                            errors.append(error)
                             finished?(nil)
                         }
                     }
@@ -58,7 +54,12 @@ public class HLSSegmentDownloader {
         }
         
         let joinOperation = RNConcurrentBlockOperation() { finished in
-            completion { return Array(self.writers.keys) }
+            if !errors.isEmpty {
+                completion { throw HLSError.multipleErrors(errors) }
+            }
+            else {
+                completion { return Array(self.writers.keys) }
+            }
             finished?(nil)
         }
         
@@ -74,21 +75,6 @@ public class HLSSegmentDownloader {
         return "bytes=\(range.location)-\(range.location + range.length)"
     }
     
-    func createSegmentFiles(of track: HLSMediaTrackData) throws {
-        var fileMap = [URL: Int]()
-        for segment in track.segments {
-            let url = try self.localUri(for: segment.uri)
-            let segmentSize = segment.byteRange?.length ?? 0
-            fileMap[url] = (fileMap[url] ?? 0) + segmentSize
-        }
-        let now = Date()
-        for (url, totalSize) in fileMap {
-            print("Writing \(totalSize) bytes")
-            try Data().write(to: url)
-        }
-        print(now.timeIntervalSinceNow * -1000)
-    }
-    
     private func localUri(for segmentUri: URL) throws -> URL {
         let localUrl = try FileManager.default.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent(segmentUri.lastPathComponent)
         return localUrl
@@ -96,6 +82,10 @@ public class HLSSegmentDownloader {
     
     private func writer(for writerUri: URL) throws -> FileHandle {
         guard let writer = writers[writerUri] else {
+            // FileHandle is unable to create the file itself, so we must create an empty one beforehand.
+            if !FileManager.default.fileExists(atPath: writerUri.path) {
+                try Data().write(to: writerUri)
+            }
             let writer = try FileHandle(forWritingTo: writerUri)
             writers[writerUri] = writer
             return writer
@@ -105,16 +95,8 @@ public class HLSSegmentDownloader {
     
     private func write(_ data: Data, at offset: Int?, with writer: FileHandle, url: URL) throws {
         let offset = UInt64(offset ?? 0)
-        if !FileManager.default.fileExists(atPath: url.path) {
-            try Data().write(to: url)
-        }
         writer.seek(toFileOffset: offset)
         writer.write(data)
     }
     
-}
-
-private struct FileInfo {
-    let uri: URL
-    var totalSize: Int
 }
