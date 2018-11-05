@@ -21,6 +21,7 @@
   },
   "swift_version": "4.2",
   "source_files": "HLSAudioPlayer/Sources/**/*.*",
+  "resources": "HLSAudioPlayer/Resources/**/*.*",
   "dependencies": {
     "RNConcurrentBlockOperation": [
 

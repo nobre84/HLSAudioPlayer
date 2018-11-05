@@ -43,7 +43,7 @@ public class HLSParser {
     public func parse() throws {
         if let url = url {
             let playlist = try String(contentsOf: url).trimmingCharacters(in: .whitespacesAndNewlines)
-            guard playlist.count > 0, playlist.starts(with: playlistHeaderIdentifier) else { throw HLSError.invalidPlaylist }
+            guard playlist.count > 0, playlist.starts(with: playlistHeaderIdentifier) else { throw HLSParserError.invalidPlaylist }
             
             self.playlist = playlist
             
@@ -55,16 +55,16 @@ public class HLSParser {
         let attributes = try parseTrackAttributes(from: metadata)
         
         // Required tags
-        guard let typeRawValue = attributes["TYPE"] else { throw HLSError.missingTrackMediaType }
-        guard let type = HLSMediaType(rawValue: typeRawValue) else { throw HLSError.unknownTrackMediaType }
-        guard let groupId = attributes["GROUP-ID"] else { throw HLSError.missingTrackGroupId }
-        guard let name = attributes["NAME"] else { throw HLSError.missingTrackName }
+        guard let typeRawValue = attributes["TYPE"] else { throw HLSParserError.missingTrackMediaType }
+        guard let type = HLSMediaType(rawValue: typeRawValue) else { throw HLSParserError.unknownTrackMediaType }
+        guard let groupId = attributes["GROUP-ID"] else { throw HLSParserError.missingTrackGroupId }
+        guard let name = attributes["NAME"] else { throw HLSParserError.missingTrackName }
         
         let isDefault = attributes["DEFAULT"] != "NO"
         let isAutoSelect = attributes["AUTOSELECT"] == "YES"
         
         // If the AUTOSELECT attribute is present, its value MUST be YES if the value of the DEFAULT attribute is YES.
-        if attributes["AUTOSELECT"] != nil, isDefault, !isAutoSelect { throw HLSError.invalidTrackAutoSelectAttribute }
+        if attributes["AUTOSELECT"] != nil, isDefault, !isAutoSelect { throw HLSParserError.invalidTrackAutoSelectAttribute }
         
         var trackUri: URL?
         if let trackUriString = attributes["URI"] {
@@ -73,7 +73,7 @@ public class HLSParser {
         let trackData = try parseTrackData(from: trackUri)
         
         // If the TYPE is CLOSED-CAPTIONS, the URI attribute MUST NOT be present.
-        guard trackUri == nil || type != .closedCaptions else { throw HLSError.invalidTrackUriAttribute }
+        guard trackUri == nil || type != .closedCaptions else { throw HLSParserError.invalidTrackUriAttribute }
         
         return HLSMediaTrack(type: type, groupId: groupId, name: name, isDefault: isDefault, isAutoSelect: isAutoSelect, url: trackUri, data: trackData)
     }
@@ -82,15 +82,15 @@ public class HLSParser {
         let headerTags = try parseTrackDataHeaderTags(from: playlist.slice(from: playlistHeaderIdentifier, to: playlistSegmentIdentifier))
         
         // Required tags
-        guard let versionString = headerTags[playlistTrackVersionIdentifier] else { throw HLSError.missingTrackDataVersion }
-        guard let version = Int(versionString) else { throw HLSError.invalidTrackDataVersion }
-        guard let targetDurationString = headerTags[playlistTrackTargetDurationIdentifier] else { throw HLSError.missingTrackDataTargetDuration }
-        guard let targetDuration = Int(targetDurationString) else { throw HLSError.invalidTrackDataTargetDuration }
+        guard let versionString = headerTags[playlistTrackVersionIdentifier] else { throw HLSParserError.missingTrackDataVersion }
+        guard let version = Int(versionString) else { throw HLSParserError.invalidTrackDataVersion }
+        guard let targetDurationString = headerTags[playlistTrackTargetDurationIdentifier] else { throw HLSParserError.missingTrackDataTargetDuration }
+        guard let targetDuration = Int(targetDurationString) else { throw HLSParserError.invalidTrackDataTargetDuration }
         
         let allowsCacheString = headerTags[playlistTrackAllowCacheIdentifier]
         let allowsCache = allowsCacheString != nil ? allowsCacheString == playlistEnumerationYes : nil
         let mediaSequenceString = headerTags[playlistTrackMediaSequenceIdentifier] ?? "0"
-        guard let mediaSequence = Int(mediaSequenceString) else { throw HLSError.invalidTrackDataMediaSequence }
+        guard let mediaSequence = Int(mediaSequenceString) else { throw HLSParserError.invalidTrackDataMediaSequence }
         
         let segments = try parseTrackSegments(from: playlist)
         
@@ -133,11 +133,11 @@ public class HLSParser {
     }
     
     private func parseSegment(from segmentData: [String: String]) throws -> HLSMediaSegment {
-        guard let durationString = segmentData[segmentDurationKey] else { throw HLSError.missingSegmentDuration }
-        guard let duration = Double(durationString) else { throw HLSError.invalidSegmentDuration }
+        guard let durationString = segmentData[segmentDurationKey] else { throw HLSParserError.missingSegmentDuration }
+        guard let duration = Double(durationString) else { throw HLSParserError.invalidSegmentDuration }
         let title = segmentData[segmentTitleKey]
-        guard let uriString = segmentData[segmentUriKey] else { throw HLSError.missingSegmentUri }
-        guard let uri = URL(string: uriString, relativeTo: url) else { throw HLSError.invalidSegmentUri }
+        guard let uriString = segmentData[segmentUriKey] else { throw HLSParserError.missingSegmentUri }
+        guard let uri = URL(string: uriString, relativeTo: url) else { throw HLSParserError.invalidSegmentUri }
         
         let byteRange = try parseSegmentByteRange(lengthString: segmentData[segmentByteRangeLengthKey], offsetString: segmentData[segmentByteRangeOffsetKey])
         
@@ -146,7 +146,7 @@ public class HLSParser {
     
     private func parseSegmentByteRange(lengthString: String?, offsetString: String?) throws -> NSRange? {
         guard let lengthString = lengthString else { return nil }
-        guard let length = Int(lengthString) else { throw HLSError.invalidSegmentByteRange }
+        guard let length = Int(lengthString) else { throw HLSParserError.invalidSegmentByteRange }
         var range = NSRange(location: 0, length: length)
         if let offsetString = offsetString,
             let offset = Int(offsetString) {
@@ -184,12 +184,12 @@ public class HLSParser {
     private func parseTrackData(from uri: URL?) throws -> HLSMediaTrackData? {
         guard let uri = uri else { return nil }
         let playlist = try String(contentsOf: uri).trimmingCharacters(in: .whitespacesAndNewlines)
-        guard playlist.count > 0, playlist.starts(with: playlistHeaderIdentifier) else { throw HLSError.invalidPlaylist }
+        guard playlist.count > 0, playlist.starts(with: playlistHeaderIdentifier) else { throw HLSParserError.invalidPlaylist }
         return try parseTrackData(from: playlist)
     }
     
     private func parseTrackDataHeaderTags(from header: String?) throws -> [String: String] {
-        guard let header = header?.trimmingCharacters(in: .whitespacesAndNewlines), header.count > 0 else { throw HLSError.missingTrackDataHeaders }
+        guard let header = header?.trimmingCharacters(in: .whitespacesAndNewlines), header.count > 0 else { throw HLSParserError.missingTrackDataHeaders }
         
         let step1 = header.components(separatedBy: .newlines)
         let step2 = step1.map { $0.split(separator: ":") }

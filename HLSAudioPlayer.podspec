@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   s.swift_version = '4.2'
 
   s.source_files = 'HLSAudioPlayer/Sources/**/*.*'
-  #s.resources = 'HLSAudioPlayer/Assets/**/*.*'
+  s.resources = 'HLSAudioPlayer/Resources/**/*.*'
   
   s.dependency 'RNConcurrentBlockOperation'
 end

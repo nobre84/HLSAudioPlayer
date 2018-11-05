@@ -10,6 +10,8 @@ import RNConcurrentBlockOperation
 
 public class HLSSegmentDownloader {
 
+    public var progressHandler: ((_ percentDone: Double) -> Void)?
+    
     private var writers: [URL: FileHandle] = [:]
     private var maxConcurrentDownloadCount: Int
     
@@ -23,6 +25,9 @@ public class HLSSegmentDownloader {
         
         var operations = [Operation]()
         var errors = [Error]()
+        
+        let totalSize = Double(track.segments.map { $0.byteRange?.length ?? 0 }.reduce(0, +))
+        var totalDownloadedSize: Double = 0
         
         track.segments.forEach { segment in
             operations.append(RNConcurrentBlockOperation() { finished in
@@ -43,6 +48,9 @@ public class HLSSegmentDownloader {
                             let writer = try self.writer(for: writerUrl)
                             try self.write(data, at: segment.byteRange?.location, with: writer, url: writerUrl)
                             finished?(nil)
+                            let segmentSize = Double(segment.byteRange?.length ?? 0)
+                            totalDownloadedSize += segmentSize
+                            self.progressHandler?(totalDownloadedSize / totalSize)
                         }
                         catch {
                             errors.append(error)
@@ -55,7 +63,7 @@ public class HLSSegmentDownloader {
         
         let joinOperation = RNConcurrentBlockOperation() { finished in
             if !errors.isEmpty {
-                completion { throw HLSError.multipleErrors(errors) }
+                completion { throw HLSParserError.multipleErrors(errors) }
             }
             else {
                 completion { return Array(self.writers.keys) }

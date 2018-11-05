@@ -104,6 +104,45 @@ class HLSSegmentDownloaderTests: XCTestCase {
         expect(self.downloader.createRangeHeader(with: range)) == "bytes=1024-2048"
     }
     
+    func testDownloaderCallsProgressHandlerWhenProvided() {
+        stub(condition: isHost("stub.com")) { request in
+            // Stubbing segments
+            if let range = self.parseRange(from: request.value(forHTTPHeaderField: "Range")) {
+                let handle = FileHandle(forReadingAtPath: OHPathForFile("stub.ts", type(of: self))!)
+                handle?.seek(toFileOffset: UInt64(range.location))
+                let segmentData = handle?.readData(ofLength: range.length)
+                return OHHTTPStubsResponse(data: segmentData!, statusCode:206, headers:["Content-Type": "video/MP2T"])
+            }
+            // Stubbing playlists
+            let stubPath = OHPathForFile(request.url!.lastPathComponent, type(of: self))
+            return fixture(filePath: stubPath!, headers: ["Content-Type":"application/x-mpegURL"])
+        }
+        
+        expect { () -> Void in
+            let parser = try HLSParser(url: URL(string: "https://stub.com/hls_index.m3u8")!)
+            let trackData = parser.tracks[0].data!
+            
+            waitUntil { done in
+                var calledCount = 0
+                var lastProgress: Double = 0
+                self.downloader.progressHandler = { progress in
+                    expect(progress) != lastProgress
+                    expect(progress) >= 0
+                    expect(progress) <= 1
+                    calledCount += 1
+                    lastProgress = progress
+                }
+                self.downloader.downloadSegments(of: trackData) { response in
+                    expect { () -> Void in
+                        _ = try response()
+                    }.notTo(throwError())
+                    expect(calledCount) == 23
+                    done()
+                }
+            }
+        }.notTo(throwError())
+    }
+    
     private func parseRange(from httpHeader: String?) -> NSRange? {
         guard let httpHeader = httpHeader else { return nil }
         

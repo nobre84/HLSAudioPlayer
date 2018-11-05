@@ -36,7 +36,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  HLSAudioPlayer: d1aeeacabfb6088bc7917f3bc0218b98b16e0c45
+  HLSAudioPlayer: e8880def9643670a877b39855b7a5ab45f7f313c
   Nimble: 04f732da099ea4d153122aec8c2a88fd0c7219ae
   OHHTTPStubs: 1e21c7d2c084b8153fc53d48400d8919d2d432d0
   RNConcurrentBlockOperation: 1ca793e5994df99e3805f43dd2a77da26f3bdd7e

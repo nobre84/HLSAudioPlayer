@@ -34,13 +34,13 @@ class HLSParserTests: XCTestCase {
     func testParserCannotBeInitializedWithEmptyPlaylist() {
         expect { () -> Void in
             _ = try HLSParser(url: Stubs.url(of: "empty"))
-        }.to(throwError(HLSError.invalidPlaylist))
+        }.to(throwError(HLSParserError.invalidPlaylist))
     }
     
     func testParserCannotBeInitializedWithInvalidPlaylist() {
         expect { () -> Void in
             _ = try HLSParser(url: Stubs.url(of: "invalid"))
-        }.to(throwError(HLSError.invalidPlaylist))
+        }.to(throwError(HLSParserError.invalidPlaylist))
     }
     
     func testParserCantExtrackAudioTracksFromNonMasterPlaylist() {
@@ -82,19 +82,19 @@ class HLSParserTests: XCTestCase {
     func testParserMustFailToParsePlaylistsIncludingUrisForClosedCaptionsTracks() {
         expect { () -> Void in
             _ = try HLSParser(url: Stubs.url(of: "invalid_track_uri"))
-        }.to(throwError(HLSError.invalidTrackUriAttribute))
+        }.to(throwError(HLSParserError.invalidTrackUriAttribute))
     }
     
     func testParserMustFailToParsePlaylistsMissingTrackType() {
         expect { () -> Void in
             _ = try HLSParser(url: Stubs.url(of: "invalid_track_missing_type"))
-        }.to(throwError(HLSError.missingTrackMediaType))
+        }.to(throwError(HLSParserError.missingTrackMediaType))
     }
     
     func testParserMustFailToParsePlaylistsUnknownTrackType() {
         expect { () -> Void in
             _ = try HLSParser(url: Stubs.url(of: "invalid_track_unknown_type"))
-        }.to(throwError(HLSError.unknownTrackMediaType))
+        }.to(throwError(HLSParserError.unknownTrackMediaType))
     }
     
     func testParserMayIgnorePartiallyFilledUnknownTrackAttributes() {
@@ -106,19 +106,19 @@ class HLSParserTests: XCTestCase {
     func testParserMustFailToParsePlaylistsMissingTrackName() {
         expect { () -> Void in
             _ = try HLSParser(url: Stubs.url(of: "invalid_track_missing_name"))
-        }.to(throwError(HLSError.missingTrackName))
+        }.to(throwError(HLSParserError.missingTrackName))
     }
     
     func testParserMustFailToParsePlaylistsMissingTrackGroupId() {
         expect { () -> Void in
             _ = try HLSParser(url: Stubs.url(of: "invalid_track_missing_group_id"))
-        }.to(throwError(HLSError.missingTrackGroupId))
+        }.to(throwError(HLSParserError.missingTrackGroupId))
     }
     
     func testParserMustFailToParsePlaylistsWithPresentAutoSelectAttributeWhichIsNotTrueWhenDefaultAttributeIsTrue() {
         expect { () -> Void in
             _ = try HLSParser(url: Stubs.url(of: "invalid_track_invalid_autoselect_value"))
-        }.to(throwError(HLSError.invalidTrackAutoSelectAttribute))
+        }.to(throwError(HLSParserError.invalidTrackAutoSelectAttribute))
     }
     
     func testParserMustIgnoreInvalidDefaultValue() {
@@ -172,37 +172,37 @@ class HLSParserTests: XCTestCase {
     func testParserMustFailToParseTrackDataWithoutHeader() {
         expect { () -> Void in
             _ = try HLSParser(url: Stubs.url(of: "hls_index_invalid_track"))
-        }.to(throwError(HLSError.invalidPlaylist))
+        }.to(throwError(HLSParserError.invalidPlaylist))
     }
     
     func testParserMustFailToParseTrackDataWithoutHeaders() {
         expect { () -> Void in
             _ = try HLSParser(url: Stubs.url(of: "hls_index_no_track_data_headers"))
-        }.to(throwError(HLSError.missingTrackDataHeaders))
+        }.to(throwError(HLSParserError.missingTrackDataHeaders))
     }
     
     func testParserMustFailToParseTrackDataWithoutVersion() {
         expect { () -> Void in
             _ = try HLSParser(url: Stubs.url(of: "hls_index_missing_track_data_version"))
-        }.to(throwError(HLSError.missingTrackDataVersion))
+        }.to(throwError(HLSParserError.missingTrackDataVersion))
     }
     
     func testParserMustFailToParseTrackDataWithInvalidVersion() {
         expect { () -> Void in
             _ = try HLSParser(url: Stubs.url(of: "hls_index_invalid_track_data_version"))
-        }.to(throwError(HLSError.invalidTrackDataVersion))
+        }.to(throwError(HLSParserError.invalidTrackDataVersion))
     }
     
     func testParserMustFailToParseTrackDataWithoutTargetDuration() {
         expect { () -> Void in
             _ = try HLSParser(url: Stubs.url(of: "hls_index_missing_target_duration"))
-        }.to(throwError(HLSError.missingTrackDataTargetDuration))
+        }.to(throwError(HLSParserError.missingTrackDataTargetDuration))
     }
     
     func testParserMustFailToParseTrackDataWithInvalidTargetDuration() {
         expect { () -> Void in
             _ = try HLSParser(url: Stubs.url(of: "hls_index_invalid_target_duration"))
-            }.to(throwError(HLSError.invalidTrackDataTargetDuration))
+            }.to(throwError(HLSParserError.invalidTrackDataTargetDuration))
     }
     
     func testParserMayParseTrackDataWithoutMediaSequence() {
@@ -215,7 +215,7 @@ class HLSParserTests: XCTestCase {
     func testParserMustFailToParseTrackDataWithInvalidMediaSequence() {
         expect { () -> Void in
             _ = try HLSParser(url: Stubs.url(of: "hls_index_invalid_media_sequence"))
-        }.to(throwError(HLSError.invalidTrackDataMediaSequence))
+        }.to(throwError(HLSParserError.invalidTrackDataMediaSequence))
     }
     
     func testParserMayParseTrackDataWithoutAllowCache() {
@@ -295,7 +295,7 @@ class HLSParserTests: XCTestCase {
         expect { () -> Void in
             let parser = HLSParser()
             _ = try parser.parseTrackData(from: trackDataHeaders)
-        }.to(throwError(HLSError.missingSegmentDuration))
+        }.to(throwError(HLSParserError.missingSegmentDuration))
     }
     
     func testParserMustFailToParseSegmentWithInvalidDuration() {
@@ -311,7 +311,7 @@ class HLSParserTests: XCTestCase {
         expect { () -> Void in
             let parser = HLSParser()
             _ = try parser.parseTrackData(from: trackDataHeaders)
-        }.to(throwError(HLSError.invalidSegmentDuration))
+        }.to(throwError(HLSParserError.invalidSegmentDuration))
     }
     
     func testParserMustParseSegmentWithTitle() {
@@ -343,7 +343,7 @@ class HLSParserTests: XCTestCase {
         expect { () -> Void in
             let parser = HLSParser()
             _ = try parser.parseTrackData(from: trackDataHeaders)
-        }.to(throwError(HLSError.missingSegmentUri))
+        }.to(throwError(HLSParserError.missingSegmentUri))
     }
     
     func testParserMustFailToParseSegmentWithInvalidUri() {
@@ -359,7 +359,7 @@ class HLSParserTests: XCTestCase {
         expect { () -> Void in
             let parser = HLSParser()
             _ = try parser.parseTrackData(from: trackDataHeaders)
-        }.to(throwError(HLSError.invalidSegmentUri))
+        }.to(throwError(HLSParserError.invalidSegmentUri))
     }
     
     func testParserMayParseSegmentWithoutByteRange() {
@@ -429,7 +429,7 @@ class HLSParserTests: XCTestCase {
         expect { () -> Void in
             let parser = HLSParser()
             _ = try parser.parseTrackData(from: trackDataHeaders)
-        }.to(throwError(HLSError.invalidSegmentByteRange))
+        }.to(throwError(HLSParserError.invalidSegmentByteRange))
     }
     
 }
