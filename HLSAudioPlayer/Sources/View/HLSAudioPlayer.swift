@@ -43,10 +43,38 @@ public class HLSAudioPlayer: UIView {
     }
     public var url: URL?
     
+    // MARK: Private Variables
+    
     private let downloader = HLSSegmentDownloader()
     private var player: AVAudioPlayer?
+    private lazy var coverLayer: CAShapeLayer = {
+        let width = iconImageView.bounds.size.width
+        let pi = CGFloat(Double.pi)
+        let path = UIBezierPath(arcCenter: iconImageView.center, radius: width / 2, startAngle: 0, endAngle: 2 * pi, clockwise: false)
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.path = path.cgPath
+        shapeLayer.fillColor = UIColor.clear.cgColor
+        shapeLayer.strokeColor = UIColor.white.withAlphaComponent(0.7).cgColor
+        shapeLayer.lineWidth = width
+        return shapeLayer
+    }()
+    
+    private func setLoadingPercentage(to value: Double) {
+        if value == 0 {
+            iconImageView.layer.addSublayer(coverLayer)
+        }
+        CATransaction.begin()
+        CATransaction.setDisableActions(true)
+        coverLayer.strokeEnd = CGFloat(1 - value)
+        CATransaction.commit()
+        if value == 1 {
+            coverLayer.removeFromSuperlayer()
+        }
+    }
+    
+    // MARK: Outlets
     @IBOutlet private var contentView: UIView!
-    @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet private weak var iconImageView: UIImageView!
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -67,7 +95,7 @@ public class HLSAudioPlayer: UIView {
         guard let track = highestQualityAudioTrack else { throw HLSPlayerError.missingTrack }
         
         downloader.progressHandler = { progress in
-            print("\(progress * 100)%")
+            self.setLoadingPercentage(to: progress)
         }
         downloader.downloadSegments(of: track) { response in
             do {
@@ -96,6 +124,8 @@ public class HLSAudioPlayer: UIView {
     public func complete() {
         do {
             try HLSSegmentDownloader.clearCaches()
+            setLoadingPercentage(to: 0)
+            iconImageView.image = Resources.iconPlay
         }
         catch {
             state = .error(error)
@@ -104,7 +134,7 @@ public class HLSAudioPlayer: UIView {
     
     private func dummyUrl() -> URL {
         let bundle = Bundle(for: type(of: self))
-        guard let url = bundle.url(forResource: "track", withExtension: "mp3") else {
+        guard let url = bundle.url(forResource: "coo-coo", withExtension: "mp3") else {
             fatalError("Failed fetching dummy track")
         }
         return url
@@ -116,6 +146,7 @@ public class HLSAudioPlayer: UIView {
         addSubview(contentView)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         contentView.addGestureRecognizer(tapGesture)
+        setLoadingPercentage(to: 0)
     }
     
     @objc private func handleTap(_ tapGestureRecognizer: UITapGestureRecognizer) {

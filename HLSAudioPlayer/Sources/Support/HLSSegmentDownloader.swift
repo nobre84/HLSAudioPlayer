@@ -49,12 +49,12 @@ public class HLSSegmentDownloader {
                             let writerUrl = try self.localUri(for: segment.uri)
                             let writer = try self.writer(for: writerUrl)
                             try self.write(data, at: segment.byteRange?.location, with: writer, url: writerUrl)
-                            finished?(nil)
                             let segmentSize = Double(segment.byteRange?.length ?? 0)
                             totalDownloadedSize += segmentSize
                             DispatchQueue.main.async {
                                 self.progressHandler?(totalDownloadedSize / totalSize)
                             }
+                            finished?(nil)
                         }
                         catch {
                             errors.append(error)
