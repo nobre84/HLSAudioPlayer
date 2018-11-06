@@ -31,7 +31,7 @@ class HLSSegmentDownloaderTests: XCTestCase {
         
         // Tests it can run without caches first
         do {
-            try clearCaches()
+            try HLSSegmentDownloader.clearCaches()
         }
         catch {
             fail("Failed to clear caches")
@@ -137,6 +137,7 @@ class HLSSegmentDownloaderTests: XCTestCase {
                         _ = try response()
                     }.notTo(throwError())
                     expect(calledCount) == 23
+                    expect(lastProgress) == 1
                     done()
                 }
             }
@@ -151,16 +152,6 @@ class HLSSegmentDownloaderTests: XCTestCase {
             let endString = httpHeader.slice(from: "-"),
             let end = Int(endString) else { return nil }
         return NSRange(location: start, length: end - start)
-    }
-    
-    private func clearCaches() throws {
-        let manager = FileManager.default
-        let cachesDir = try manager.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-        let files = try manager.contentsOfDirectory(at: cachesDir, includingPropertiesForKeys: nil)
-        print("Clearing cache with \(files) files")
-        for url in files {
-            try manager.removeItem(at: url)
-        }
     }
     
 }

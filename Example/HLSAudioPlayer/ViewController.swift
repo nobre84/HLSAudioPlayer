@@ -7,17 +7,17 @@
 //
 
 import UIKit
+import HLSAudioPlayer
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var audioPlayer: HLSAudioPlayer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
+        
+        audioPlayer.url = URL(string: "http://pubcache1.arkiva.de/test/hls_index.m3u8")
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 }

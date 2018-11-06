@@ -13,21 +13,40 @@ enum HLSAudioPlayerState {
     case fetching
     case playing
     case paused
-    case completed
-    case error
+    case error(Error?)
 }
 
 public class HLSAudioPlayer: UIView {
     var state: HLSAudioPlayerState = .uninitialized {
         didSet {
-            print("oldState: \(oldValue) -> newState: \(state)")
+            do {
+                print("oldState: \(oldValue) -> newState: \(state)")
+                switch state {
+                case .uninitialized:
+                    complete()
+                case .fetching:
+                    try fetch()
+                case .playing:
+                    try play()
+                case .paused:
+                    pause()
+                case .error(let error):
+                    print(error as Any)                    
+                }
+            }
+            catch {
+                defer {
+                    state = .error(error)
+                }
+            }
         }
     }
-    var url: URL?
+    public var url: URL?
     
     private let downloader = HLSSegmentDownloader()
     private var player: AVAudioPlayer?
     @IBOutlet private var contentView: UIView!
+    @IBOutlet weak var iconImageView: UIImageView!
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -39,15 +58,13 @@ public class HLSAudioPlayer: UIView {
         setupContent()
     }
     
-    public func load() throws {
+    public func fetch() throws {
         guard let url = url else { throw HLSPlayerError.missingUrl }
         
         let parser = try HLSParser(url: url)
         let highestQualityAudioTrack = parser.tracks.filter { $0.type == .audio }.compactMap { $0.data }.sorted { $0.averageBitrate > $1.averageBitrate}.first
         
         guard let track = highestQualityAudioTrack else { throw HLSPlayerError.missingTrack }
-        
-        state = .fetching
         
         downloader.progressHandler = { progress in
             print("\(progress * 100)%")
@@ -59,11 +76,29 @@ public class HLSAudioPlayer: UIView {
                 self.player = try AVAudioPlayer(contentsOf: self.dummyUrl())
                 self.player?.delegate = self
                 self.state = .playing
-                self.player?.play()
             }
             catch {
-                self.state = .error
+                self.state = .error(error)
             }
+        }
+    }
+    
+    public func play() throws {
+        player?.play()
+        iconImageView.image = Resources.iconPause
+    }
+    
+    public func pause() {
+        player?.pause()
+        iconImageView.image = Resources.iconPlay
+    }
+    
+    public func complete() {
+        do {
+            try HLSSegmentDownloader.clearCaches()
+        }
+        catch {
+            state = .error(error)
         }
     }
     
@@ -84,13 +119,15 @@ public class HLSAudioPlayer: UIView {
     }
     
     @objc private func handleTap(_ tapGestureRecognizer: UITapGestureRecognizer) {
-        print("tapped")
-        do {
-            url = URL(string: "http://pubcache1.arkiva.de/test/hls_index.m3u8")
-            try load()
-        }
-        catch {
-            state = .error
+        switch state {
+        case .uninitialized:
+            state = .fetching
+        case .playing:
+            state = .paused
+        case .paused:
+            state = .playing
+        default:
+            break
         }
     }
 }
@@ -102,7 +139,7 @@ extension HLSAudioPlayer: AVAudioPlayerDelegate {
     }
     
     public func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer, error: Error?) {
-        state = .error
+        state = .error(error)
     }
     
 }

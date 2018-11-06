@@ -8,6 +8,8 @@
 import UIKit
 import RNConcurrentBlockOperation
 
+let HLSSegmentDownloaderCachesFolder = "HLSSegmentDownloaderCache"
+
 public class HLSSegmentDownloader {
 
     public var progressHandler: ((_ percentDone: Double) -> Void)?
@@ -50,7 +52,9 @@ public class HLSSegmentDownloader {
                             finished?(nil)
                             let segmentSize = Double(segment.byteRange?.length ?? 0)
                             totalDownloadedSize += segmentSize
-                            self.progressHandler?(totalDownloadedSize / totalSize)
+                            DispatchQueue.main.async {
+                                self.progressHandler?(totalDownloadedSize / totalSize)
+                            }
                         }
                         catch {
                             errors.append(error)
@@ -79,13 +83,26 @@ public class HLSSegmentDownloader {
         queue.addOperation(joinOperation!)
     }
     
+    public static func clearCaches() throws {
+        let manager = FileManager.default
+        let cachesDir = try manager.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent(HLSSegmentDownloaderCachesFolder, isDirectory: true)
+        let files = try manager.contentsOfDirectory(at: cachesDir, includingPropertiesForKeys: nil)
+        print("Clearing cache with \(files) files")
+        for url in files {
+            try manager.removeItem(at: url)
+        }
+    }
+    
     func createRangeHeader(with range: NSRange) -> String {
         return "bytes=\(range.location)-\(range.location + range.length)"
     }
     
     private func localUri(for segmentUri: URL) throws -> URL {
-        let localUrl = try FileManager.default.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent(segmentUri.lastPathComponent)
-        return localUrl
+        let manager = FileManager.default
+        let cachesDir = try manager.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true).appendingPathComponent(HLSSegmentDownloaderCachesFolder, isDirectory: true)
+        try manager.createDirectory(atPath: cachesDir.path, withIntermediateDirectories: true, attributes: nil)
+        
+        return cachesDir.appendingPathComponent(segmentUri.lastPathComponent)
     }
     
     private func writer(for writerUri: URL) throws -> FileHandle {

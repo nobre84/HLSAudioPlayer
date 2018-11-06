@@ -36,6 +36,9 @@
                             <constraint firstItem="fC2-cZ-7EJ" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="Ywd-eg-JXm"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="audioPlayer" destination="fC2-cZ-7EJ" id="vne-cS-WHU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

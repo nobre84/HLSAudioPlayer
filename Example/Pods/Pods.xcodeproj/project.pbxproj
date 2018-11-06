@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		001F774C7FCE342E1F33245FD51AE64D /* OHHTTPStubs.m in Sources */ = {isa = PBXBuildFile; fileRef = A94EBA5056B73A77EF485E6742F0FE39 /* OHHTTPStubs.m */; };
+		0063FBCB21918FDC00350063 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0063FBCA21918FDC00350063 /* Resources.swift */; };
 		00D60A032190339B009AAE0D /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00D60A022190339B009AAE0D /* Media.xcassets */; };
 		00D60A052190417F009AAE0D /* HLSPlayerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D60A042190417F009AAE0D /* HLSPlayerError.swift */; };
 		00D60A0721904A0E009AAE0D /* track.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 00D60A0621904A0D009AAE0D /* track.mp3 */; };
@@ -175,6 +176,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0063FBCA21918FDC00350063 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		006A75B9F05214A15187B009D532C358 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00D60A022190339B009AAE0D /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = HLSAudioPlayer/Resources/Media.xcassets; sourceTree = "<group>"; };
 		00D60A042190417F009AAE0D /* HLSPlayerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLSPlayerError.swift; sourceTree = "<group>"; };
@@ -394,6 +396,7 @@
 				00D60A0621904A0D009AAE0D /* track.mp3 */,
 				974D9306C649F83242F7D59F7D713831 /* HLSAudioPlayer.xib */,
 				00D60A022190339B009AAE0D /* Media.xcassets */,
+				0063FBCA21918FDC00350063 /* Resources.swift */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1118,6 +1121,7 @@
 				636A815838F9C34AD9C2DCE39B2A13F0 /* HLSParser.swift in Sources */,
 				7BADC63F3B0819CB789027024EEA5AA6 /* HLSSegmentDownloader.swift in Sources */,
 				4410A0756DAC2DB79571090DF9075788 /* String+Slicing.swift in Sources */,
+				0063FBCB21918FDC00350063 /* Resources.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
