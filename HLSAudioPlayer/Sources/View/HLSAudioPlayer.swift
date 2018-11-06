@@ -8,7 +8,7 @@
 import UIKit
 import AVKit
 
-enum HLSAudioPlayerState {
+fileprivate enum HLSAudioPlayerState {
     case uninitialized
     case fetching
     case playing
@@ -17,36 +17,21 @@ enum HLSAudioPlayerState {
 }
 
 public class HLSAudioPlayer: UIView {
-    var state: HLSAudioPlayerState = .uninitialized {
-        didSet {
-            do {
-                print("oldState: \(oldValue) -> newState: \(state)")
-                switch state {
-                case .uninitialized:
-                    complete()
-                case .fetching:
-                    try fetch()
-                case .playing:
-                    try play()
-                case .paused:
-                    pause()
-                case .error(let error):
-                    print(error as Any)                    
-                }
-            }
-            catch {
-                defer {
-                    state = .error(error)
-                }
-            }
-        }
-    }
+    
     public var url: URL?
     
-    // MARK: Private Variables
+    // MARK: - Private Variables
     
     private let downloader = HLSSegmentDownloader()
     private var player: AVAudioPlayer?
+    
+    private var state: HLSAudioPlayerState = .uninitialized {
+        didSet {
+            print("oldState: \(oldValue) -> newState: \(state)")
+            handleStateChange(state)
+        }
+    }
+
     private lazy var coverLayer: CAShapeLayer = {
         let width = iconImageView.bounds.size.width
         let pi = CGFloat(Double.pi)
@@ -59,22 +44,11 @@ public class HLSAudioPlayer: UIView {
         return shapeLayer
     }()
     
-    private func setLoadingPercentage(to value: Double) {
-        if value == 0 {
-            iconImageView.layer.addSublayer(coverLayer)
-        }
-        CATransaction.begin()
-        CATransaction.setDisableActions(true)
-        coverLayer.strokeEnd = CGFloat(1 - value)
-        CATransaction.commit()
-        if value == 1 {
-            coverLayer.removeFromSuperlayer()
-        }
-    }
-    
     // MARK: Outlets
     @IBOutlet private var contentView: UIView!
     @IBOutlet private weak var iconImageView: UIImageView!
+    
+    // MARK: - Life Cycle
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -86,7 +60,9 @@ public class HLSAudioPlayer: UIView {
         setupContent()
     }
     
-    public func fetch() throws {
+    // MARK: - Private Methods
+    
+    private func fetch() throws {
         guard let url = url else { throw HLSPlayerError.missingUrl }
         
         let parser = try HLSParser(url: url)
@@ -99,8 +75,9 @@ public class HLSAudioPlayer: UIView {
         }
         downloader.downloadSegments(of: track) { response in
             do {
-                let urls = try response()
-//                self.player = try AVAudioPlayer(contentsOf: urls[0])
+                _ = try response()
+                // TODO: Handle raw ts content
+                // self.player = try AVAudioPlayer(contentsOf: urls[0])
                 self.player = try AVAudioPlayer(contentsOf: self.dummyUrl())
                 self.player?.delegate = self
                 self.state = .playing
@@ -111,17 +88,20 @@ public class HLSAudioPlayer: UIView {
         }
     }
     
-    public func play() throws {
-        player?.play()
-        iconImageView.image = Resources.iconPause
+    private func play() {
+        if player?.play() ?? false {
+            iconImageView.image = Resources.iconPause
+        }
     }
     
-    public func pause() {
-        player?.pause()
-        iconImageView.image = Resources.iconPlay
+    private func pause() {
+        if case .paused = state {
+            player?.pause()
+            iconImageView.image = Resources.iconPlay
+        }
     }
     
-    public func complete() {
+    private func complete() {
         do {
             try HLSSegmentDownloader.clearCaches()
             setLoadingPercentage(to: 0)
@@ -159,6 +139,39 @@ public class HLSAudioPlayer: UIView {
             state = .playing
         default:
             break
+        }
+    }
+    
+    private func setLoadingPercentage(to value: Double) {
+        if value == 0 {
+            iconImageView.layer.addSublayer(coverLayer)
+        }
+        CATransaction.begin()
+        CATransaction.setDisableActions(true)
+        coverLayer.strokeEnd = CGFloat(1 - value)
+        CATransaction.commit()
+        if value == 1 {
+            coverLayer.removeFromSuperlayer()
+        }
+    }
+    
+    private func handleStateChange(_ newState: HLSAudioPlayerState) {
+        do {
+            switch state {
+            case .uninitialized:
+                complete()
+            case .fetching:
+                try fetch()
+            case .playing:
+                play()
+            case .paused:
+                pause()
+            case .error(let error):
+                print(error as Any)
+            }
+        }
+        catch {
+            state = .error(error)
         }
     }
 }
