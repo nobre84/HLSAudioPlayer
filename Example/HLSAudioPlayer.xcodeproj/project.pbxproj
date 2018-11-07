@@ -11,7 +11,6 @@
 		0018833F21808DF700D34F86 /* HLSParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0018833321808DF700D34F86 /* HLSParserTests.swift */; };
 		0018834521808DF700D34F86 /* Bundle+Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0018833B21808DF700D34F86 /* Bundle+Tests.swift */; };
 		0018834621808DF700D34F86 /* Stubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0018833C21808DF700D34F86 /* Stubs.swift */; };
-		0018834721808DF700D34F86 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0018833D21808DF700D34F86 /* Info.plist */; };
 		00DCAEEE2184934A005EB797 /* hls_a192K_v4_missing_target_duration.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = 00DCAED021849348005EB797 /* hls_a192K_v4_missing_target_duration.m3u8 */; };
 		00DCAEEF2184934A005EB797 /* hls_index_missing_target_duration.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = 00DCAED121849348005EB797 /* hls_index_missing_target_duration.m3u8 */; };
 		00DCAEF02184934A005EB797 /* hls_a192K_v4_invalid_track_data_version.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = 00DCAED221849348005EB797 /* hls_a192K_v4_invalid_track_data_version.m3u8 */; };
@@ -343,7 +342,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
@@ -392,7 +391,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0018834721808DF700D34F86 /* Info.plist in Resources */,
 				00DCAF052184934A005EB797 /* hls_a192K_v4_invalid_track.m3u8 in Resources */,
 				00DCAEFF2184934A005EB797 /* hls_a192K_v4.m3u8 in Resources */,
 				00DCAF072184934A005EB797 /* invalid_track_uri.m3u8 in Resources */,
@@ -587,12 +585,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -640,12 +640,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

@@ -8,19 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		001F774C7FCE342E1F33245FD51AE64D /* OHHTTPStubs.m in Sources */ = {isa = PBXBuildFile; fileRef = A94EBA5056B73A77EF485E6742F0FE39 /* OHHTTPStubs.m */; };
-		0063FBCB21918FDC00350063 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0063FBCA21918FDC00350063 /* Resources.swift */; };
-		0063FBCD2191A00100350063 /* coo-coo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0063FBCC2191A00100350063 /* coo-coo.mp3 */; };
-		00D60A032190339B009AAE0D /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00D60A022190339B009AAE0D /* Media.xcassets */; };
-		00D60A052190417F009AAE0D /* HLSPlayerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D60A042190417F009AAE0D /* HLSPlayerError.swift */; };
-		00FF8F6221923CE2004B138E /* HLSGestureHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FF8F6121923CE2004B138E /* HLSGestureHelper.swift */; };
 		0537403405D34D7943A58FF3383A89A3 /* OHHTTPStubs.h in Headers */ = {isa = PBXBuildFile; fileRef = 27A0CABEC2374AC118F25E11481CD2EB /* OHHTTPStubs.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		05F3D5AA4467623D1DA2BB279EB5F9AF /* HLSParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593A84A3CA7B2C04D842D8EA82B7E9F1 /* HLSParser.swift */; };
 		06F38DD26D80484050C9ED86478406F2 /* BeLessThanOrEqual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9E126C095D5B44F83585458221FC91 /* BeLessThanOrEqual.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		0A7E260A8CB224DB16B2D6E39449CB0D /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BEEB06E9A096EAA094CB450124AAE0B /* Media.xcassets */; };
 		0C345DBBF5EF9ED046CB579FDD401A57 /* NimbleEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60534CA04B6A2E8133BAEE86CB4FF7AE /* NimbleEnvironment.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		0D74DB80E4766C505062F32B6C5A70AD /* BeAnInstanceOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA345ECDCF22262F3293B39B8084B0B6 /* BeAnInstanceOf.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		0FCA6E5D333DB9EF04B546C762C74919 /* HLSMediaType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA33789C294951F86FA042FBAF94CF15 /* HLSMediaType.swift */; };
 		117395D01D060D69FB0BA68458311D48 /* OHHTTPStubsSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5393C18B04249B9F30BC9740D3A641 /* OHHTTPStubsSwift.swift */; };
 		16042495655A9A96C15E2F237B13AC27 /* OHHTTPStubs-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 733425BCE78FCBFB8D206C614AD09092 /* OHHTTPStubs-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		180F96BA6905B8BB36C6AFFA12E5A203 /* HLSAudioPlayer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 974D9306C649F83242F7D59F7D713831 /* HLSAudioPlayer.xib */; };
 		19291565899B5113A5355002CF9C8F2F /* Equal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE1A621914E1B3A4A5ABDDB444A480D /* Equal.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		1AC5D2CE6FA79327468F53B53D0A9418 /* AllPass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112A5CA7A1CC4CBE911C8F11B1C93D15 /* AllPass.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		1E2AE2B6202B65E712FE05FB2699BD2C /* ExpectationMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C902E0194F6381C9CC4259892262709D /* ExpectationMessage.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
@@ -31,21 +26,25 @@
 		2AE939FF870629B0ED3CF6D0CC7648B1 /* Pods-HLSAudioPlayer_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6207877D51F54FEAAC445905FBD02C0E /* Pods-HLSAudioPlayer_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2DE989DE028FDDF17B823DF041F639C3 /* OHHTTPStubsResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = F6C4EA7A2348719E4025497B81F48708 /* OHHTTPStubsResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2EF89DB591335BFB29606E0706E66D9F /* NMBExceptionCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBC9BE573C54830130B9466F95414F2 /* NMBExceptionCapture.m */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		30D93305031ECABBE516D5EE0FEF0D07 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0BF509EF0851BA38B6C2E8D7435F97D /* Foundation.framework */; };
+		2F6F0DD43041B8AFB7EDD03FD80AF968 /* HLSPlayerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942AF037B5AB3B5957E5CBD0C4D307A3 /* HLSPlayerError.swift */; };
 		3312F77A6C289F2CEFBF0C1D98431671 /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F1FEAC3458E22FFF11842231FF2EED /* Async.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		350C051E271508531C90540A2496684C /* CwlCatchBadInstruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF51D31E69F37C5148CC26512EA3437 /* CwlCatchBadInstruction.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		36B2C2402BBBDC443FD365B5A50639F3 /* OHHTTPStubsResponse+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FEB00448B89903B4C6219C80C228C0 /* OHHTTPStubsResponse+JSON.m */; };
 		374FDB7789245E46F304D314CEEC6AB1 /* OHPathHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 142914FF52B1A187F80F8AD4A2DBBC0C /* OHPathHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		37C3C6235A5DDB8E37629314CF0E8489 /* ThrowAssertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC177A63AF248913FF0EB37E0F930A6 /* ThrowAssertion.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		394260A36C59B60A1C0393D45F785B32 /* Pods-HLSAudioPlayer_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C0062A2A1019443A71FEB6830BEB51 /* Pods-HLSAudioPlayer_Tests-dummy.m */; };
-		3BC49F81C01A36CEF2219823136408BE /* RNConcurrentBlockOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F62EE286257A16859A8FAD4C4D3AD2B /* RNConcurrentBlockOperation.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		3C0D99EED837A3AD705A664503EF48DE /* NMBStringify.m in Sources */ = {isa = PBXBuildFile; fileRef = C945DCD43F690E34D9FDC1D764194756 /* NMBStringify.m */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		3CF66E15FC2E3B669BAE4515F9DA89BA /* HLSAudioPlayer.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E4EB336C0D5328E10A32FDE128A200 /* HLSAudioPlayer.xib */; };
+		3E744466E9A8F5C4E2EBF79DE6D44185 /* Collection+SafeIndexing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AC5DA4C5521CB3578494B907F338E5 /* Collection+SafeIndexing.swift */; };
 		3F4466E323C5B98E199206BFBCF7CEDA /* OHPathHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = E87D1D9DA12305CEFDF14F59F0B12EFC /* OHPathHelpers.m */; };
 		407CC320A94B656BFF82445B110D6FF2 /* OHHTTPStubs-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CFAEE4A89967213FE0BDCD7EF1A06C1 /* OHHTTPStubs-dummy.m */; };
 		42A9F49A3D23555A2EC71F3E84E435FB /* DSL+Wait.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4FBF51FB0EDD50CE419CB391A1CEAF /* DSL+Wait.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		4410A0756DAC2DB79571090DF9075788 /* String+Slicing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C5A9702BC31479071ACEC2689D29D7 /* String+Slicing.swift */; };
+		44BF0B026C5AAC9FD04505298C7458F3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0BF509EF0851BA38B6C2E8D7435F97D /* Foundation.framework */; };
 		44F6B7EB2EAF73218A16F56D45C877A4 /* MatcherFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88D235C62506397ADCF3DA9360FA0A8 /* MatcherFunc.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		460379892480DF4D2278836B7F46AC5D /* Pods-HLSAudioPlayer_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A059A47038843D75E0050E22B8877BF1 /* Pods-HLSAudioPlayer_Example-dummy.m */; };
+		47E911A241A35AE2DD092CE924A21D84 /* HLSAudioPlayer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E639181611EE9C814E495A127B2DB982 /* HLSAudioPlayer-dummy.m */; };
+		4B50B684EB096BCD80AC4A669B3FD3DD /* HLSGestureHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D010981472B0AB2CFFC9FC67ADC0782 /* HLSGestureHelper.swift */; };
+		4B79D9E0CCEDF6C5DC24F881B0824E9E /* HLSMediaType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7BC2332851C109C0BFB5C788599AB /* HLSMediaType.swift */; };
 		4BC738EA304E6FA57294B9AAFEC56F70 /* Functional.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA41AF994FDD4CC0C966935D0A2D7C70 /* Functional.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		4C093ABFA796CEC3AC89C1B9DC36841D /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAD5E51F9486C14AC8DC2646BA47AB /* Errors.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		4CBC26094CDAEC14BBF87AB712D5926B /* OHHTTPStubsResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6CDD4A7C85D27FD8E41231D9C17332 /* OHHTTPStubsResponse.m */; };
@@ -57,45 +56,47 @@
 		5895EA4D5666103B2CD4243690487D07 /* RaisesException.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1BFD43E39863C97FE0A2BE6E0EE2F8 /* RaisesException.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		58B249717B134855DA1DF182DF0AEDB9 /* BeGreaterThanOrEqualTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA2B452782575297FF8A4F4040DA69A /* BeGreaterThanOrEqualTo.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		5BA1006DAFD72ACF9F31DC95096FD054 /* mach_excServer.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B248E8426C5F3AC620BADDB2CB13A11 /* mach_excServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5FB55C862C3C127FC42218B2FCEA6CBE /* Collection+SafeIndexing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96486F1F5E31E2B4FE1F0087931F96E /* Collection+SafeIndexing.swift */; };
 		618C13D4020EBA363997EFB60A56AC20 /* DSL.h in Headers */ = {isa = PBXBuildFile; fileRef = 9582577FFE4BBAF0B0ABBD09B4BCE36F /* DSL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		62A3D36B892ED9C9A3210134C97FE3F9 /* NimbleXCTestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B3AC919D9877970832ED3731CFA367 /* NimbleXCTestHandler.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		62D0D05990A4850E104E90D322186540 /* HLSAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67371986637A5FF9F0351D84FE646042 /* HLSAudioPlayer.swift */; };
-		636A815838F9C34AD9C2DCE39B2A13F0 /* HLSParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0EB79A19F7419DED21E0DF8CE65F2C /* HLSParser.swift */; };
 		65A7146D7A2047FBF3911AFAED3397DE /* OHHTTPStubsMethodSwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = E58C795BBF0AB8B1953E19C8D9851AB7 /* OHHTTPStubsMethodSwizzling.m */; };
-		6674003C3854F8D2E5702F565A86FBA2 /* RNConcurrentBlockOperation-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BB42D6FCAD492C1D14E3DFEF32E34502 /* RNConcurrentBlockOperation-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		66CBEADDFCE926914CB6B8AA5357BEE3 /* String+Slicing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679F8C8DF150733FB1FF88DD646B8FF7 /* String+Slicing.swift */; };
 		66D3DA2225488356273B3D0AB83DA268 /* CwlMachBadInstructionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DDC437A1EB1A69D4950426701E43A0 /* CwlMachBadInstructionHandler.m */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		6985430721C89135D5B4CBE13357EC31 /* DSL.m in Sources */ = {isa = PBXBuildFile; fileRef = 330E8E4019782EB9FBA136C6E897689C /* DSL.m */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		6B124A4D8EB28A918E0C87F2E75D94F8 /* MatcherProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B2520A81F5E20815BA2FF411E0BC9E /* MatcherProtocols.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		6B2DF45B9BFABD4BF3DDC503F073FB71 /* BeAKindOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119D0502F2926934356FAE00D18F45D2 /* BeAKindOf.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		6BC577C2790B344C73F67136C21D474A /* HLSAudioPlayer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8978BF49E0F85A944DDA7ECF793CEEFB /* HLSAudioPlayer-dummy.m */; };
 		6FE504E9ED5B37C05CFC2A530019AE5D /* BeGreaterThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC182A9A620B61CFCC23AE8D50A12F7B /* BeGreaterThan.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		7349E434B25782A195206D5AE35B5B6F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0BF509EF0851BA38B6C2E8D7435F97D /* Foundation.framework */; };
+		71C185DBD1BEA57D15C5723DA1A0B55A /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EB5261B811C5FBB8CC50999F593E82 /* Resources.swift */; };
 		74605907C211553B00F09768BEF12834 /* EndWith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A62A4C49D6DC7708861B0BE9FC5EED0 /* EndWith.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		746D0DBAF8EB27CA816CFD021DE2A7A1 /* SatisfyAnyOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22E5ACF62E1BBCABF83803B12CB1B57 /* SatisfyAnyOf.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		7485AAEB633B78268D656D019B77E023 /* SatisfyAllOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB007A7F2B41DA0E758EEB49F00EC5C8 /* SatisfyAllOf.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		75A1F14EE25BF8F5C433E97CBEDA5274 /* NSURLRequest+HTTPBodyTesting.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DBF43BFA4D346BD73539E6623B7ED9 /* NSURLRequest+HTTPBodyTesting.m */; };
-		773444924FCFFA8AB4597D02D43B2F46 /* RNConcurrentBlockOperation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4913D370C390EA72128E772FBADA1AA0 /* RNConcurrentBlockOperation.framework */; };
-		794BE3E52897A1E649C5FB28740BE8D9 /* HLSAudioPlayer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C20F8241B1C6C074AACDBEB1547ED60E /* HLSAudioPlayer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		79FA255F43C9E42470C9720C0604444F /* Nimble-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 886B590AD35857F52E75EF782B74E203 /* Nimble-dummy.m */; };
 		7AA9A7388AF44BB4EB2111CEDB29A666 /* MatchError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6614E8F6BA3A96A4B031471D7E965926 /* MatchError.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		7BADC63F3B0819CB789027024EEA5AA6 /* HLSSegmentDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D18D85B4A289AE1386C608D292F099 /* HLSSegmentDownloader.swift */; };
 		8050C10B78F2D1DD98A2F3E250A24AD0 /* CwlDarwinDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD9FE6E10B87F2EFD44F672E2E9A815 /* CwlDarwinDefinitions.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		81E785E7114C0C40DEEFD6188C3925C7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0BF509EF0851BA38B6C2E8D7435F97D /* Foundation.framework */; };
+		8399B23F7B6700C458B867F3C5589FA6 /* HLSMediaTrackData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8334645816B4FD877B54188774D48BB0 /* HLSMediaTrackData.swift */; };
 		85107C3BD627EA89CC1EAB25859EF85D /* AssertionRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52505C0D153BA02DECA7A5CFE8969C2 /* AssertionRecorder.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		8A2E4BC75BF00D8982D87DC3966F80A6 /* HLSMediaSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9AE2871627DE4F5AD57EE1F0951B52 /* HLSMediaSegment.swift */; };
+		8A2AE9D8DBFA7A237D37DBF234A70582 /* HLSAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F81725DD3D07ACC51CC0C67BA022D2 /* HLSAudioPlayer.swift */; };
 		8BB7F5B7E3E77CF25E64E1EAD1A26E68 /* ContainElementSatisfying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E33BEAD3BF672A78E346B90A4C8A07E /* ContainElementSatisfying.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		8E83E547D107FFC8B596829313AAF38F /* BeNil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA311DE445473D33F17BFE4DB21BDEE /* BeNil.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		9096D686AB39D3475A4227F0765C3DC4 /* Nimble-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F9D4FC5103C39AA2FAEF30C8E98A9859 /* Nimble-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		935558F919649CDE3784CBD344D3C008 /* Predicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D06AA7A8314F96146663954759524D9 /* Predicate.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		97A60F28FA1FF94422D2560002CEE407 /* NMBStringify.h in Headers */ = {isa = PBXBuildFile; fileRef = D784004B7578D52ACB17361E1DB64532 /* NMBStringify.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		97EE56F66DCD3C983D0585D8F45FDB6A /* BeIdenticalTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B7479D8C822133F2DFDD9FD8CC3830 /* BeIdenticalTo.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		998F4AC006B0F02AF1B4440311B262AE /* RNConcurrentBlockOperation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4913D370C390EA72128E772FBADA1AA0 /* RNConcurrentBlockOperation.framework */; };
 		9A0EB2F0A468E4576E776AE1E9221E7A /* CwlBadInstructionException.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EBBF6AD3B1A3C80525A025792196B0 /* CwlBadInstructionException.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		9C22921616DC80691662977DDEA6B2C4 /* BeEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728A1AAAB59BC185A80080B82C3021BA /* BeEmpty.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		A234E2C8E072C92E0CB2D49013630F7A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0BF509EF0851BA38B6C2E8D7435F97D /* Foundation.framework */; };
 		A286AD495C5D4520ADF2ECE7786EF950 /* Expectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6B4FAA07CACD75407A07B3740FB266 /* Expectation.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		A3209494C8B29F390AC14D95519460A8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0BF509EF0851BA38B6C2E8D7435F97D /* Foundation.framework */; };
 		A490FAE0B78B47AF739B0DAFC1DC5AD6 /* DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FFE5CD8095C6B9AF5C1578BB0E0276 /* DSL.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		A498A3F47186FF2340B48805288B3AA7 /* RNConcurrentBlockOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = D577B0207EDE15C9763048DC9ECB1742 /* RNConcurrentBlockOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A59D4353E0AFBBC5962CE85CC1C321B9 /* RNConcurrentBlockOperation-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FF40866A0905995981B2D3FBF04B72 /* RNConcurrentBlockOperation-dummy.m */; };
+		AA86F8FE93337A4A2854F1A634503622 /* RNConcurrentBlockOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F62EE286257A16859A8FAD4C4D3AD2B /* RNConcurrentBlockOperation.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		AACE085CD673FF559124377D15DEC945 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0BF509EF0851BA38B6C2E8D7435F97D /* Foundation.framework */; };
+		ADAA2A50CC509596CC77DE0D5EF8AD9C /* HLSSegmentDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10895D5168CBA0054F6548E4EBDC68E5 /* HLSSegmentDownloader.swift */; };
+		AFA8EC1C512A5CA3A068B9744AD37ABC /* HLSAudioPlayer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CFA9E01EDC340FC4A48958B4DA8EBA5D /* HLSAudioPlayer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B0AE06A16BEB37470940058979B1A826 /* RNConcurrentBlockOperation-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BB42D6FCAD492C1D14E3DFEF32E34502 /* RNConcurrentBlockOperation-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B2F5395D43472600D7BA7E26E3772069 /* BeLessThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD292E71148730168E4FF258751452B /* BeLessThan.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		B30FCDD03BFE82B7E9776FD9CE3A1C51 /* Contain.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF41C634C211F371A7EF147E619B5605 /* Contain.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		B3895E766FFE0B7DF58F4D0BE246221B /* XCTestObservationCenter+Register.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C365B028FB928CC611F8DF4FB62B62 /* XCTestObservationCenter+Register.m */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
@@ -106,9 +107,8 @@
 		BEB8082717D949400F2DE3458E75CBE3 /* CwlMachBadInstructionHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DCEAC33855735495E5D4AC2A92F3BAF /* CwlMachBadInstructionHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BFC5E36CF24B525D114459BB05430145 /* OHHTTPStubsMethodSwizzling.h in Headers */ = {isa = PBXBuildFile; fileRef = 2360003F15A2B8584CBF3C19263BC108 /* OHHTTPStubsMethodSwizzling.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		C5305DE0B553BCA7361C3997ACD70FFB /* mach_excServer.c in Sources */ = {isa = PBXBuildFile; fileRef = FF3B998C2BEE8C189A1B21B0DD7E2CC2 /* mach_excServer.c */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		CA7FFE59B746A9C9374E7392C795969E /* HLSMediaTrackData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D14FC6E50C971D134E67A25934E795 /* HLSMediaTrackData.swift */; };
+		CDE7E18F0AA581EFBD176EB2DB6ADEE4 /* HLSMediaTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836F90DB66F670459D4BD20B67CF1C9A /* HLSMediaTrack.swift */; };
 		CE1287DA39DB4208F5511CE47FE8298D /* AdapterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568D8F2F489E05B7F946B7CA8B2959C3 /* AdapterProtocols.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		CEAEF44BDCD0463B5978557DBB50401C /* HLSParserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E81E59F570CFA6C2165A7935794390F /* HLSParserError.swift */; };
 		DA257CBBCAB6C22BA5476F983AC78BB5 /* BeCloseTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442A57C169F51AC98237C2119D33E99E /* BeCloseTo.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		DA4FBA76599ECAB9A1993F119A41359D /* SourceLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F56EE01348EBC9E0F00A17600F6B3E /* SourceLocation.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		DAF21E37BBBFD5D408F514E867A5936C /* ToSucceed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023C274084E08BF63D6772BA50CF4D68 /* ToSucceed.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
@@ -117,34 +117,33 @@
 		DE7422B33CB514ABF6E341418B48384A /* OHHTTPStubsResponse+JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DB44FC5307EA47DE1B9821C982A171C /* OHHTTPStubsResponse+JSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DEEDD0D7C0369178EC867A59373F6380 /* Await.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF5F4DC2CCDAECCD2E89CFF96114D8C /* Await.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		DF7CF1941236840A89D99B233E4DC086 /* BeginWith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032EA970BDB8456D47ED5E63B1669774 /* BeginWith.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		E05FD611EAE49AC1D2750F9430113F62 /* RNConcurrentBlockOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = D577B0207EDE15C9763048DC9ECB1742 /* RNConcurrentBlockOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E454528E8D39931207848DACBB617A4C /* Expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3678918C63CDA9DF743230619FA713 /* Expression.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		E59B30DDE359C4FDB45CCAA81CDD2F50 /* HLSMediaTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CDFC64883E44EDB42876A603A1A185 /* HLSMediaTrack.swift */; };
 		E85EAC40F42C10F327BE0BCF39C2DF3B /* ThrowError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE9C1AC3682133C1E4F98342F895D0B /* ThrowError.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		E984CB87ABF0DD970BD4B856DEA35E1A /* CwlPreconditionTesting.h in Headers */ = {isa = PBXBuildFile; fileRef = 748C8CF3F264C351BFA7F8C9C943C9E8 /* CwlPreconditionTesting.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EA516321CC31E8F0D46CB75EBBEBFBAE /* Compatibility.h in Headers */ = {isa = PBXBuildFile; fileRef = 6FFB33126B2561531A686C36C913A871 /* Compatibility.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ED377544F1842FF0781C7086DD6BF80D /* HLSMediaSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BBE1FC75B2B6A49691E4CABDDED106 /* HLSMediaSegment.swift */; };
 		F088EE1AE386EEF27AC934DE13F455BB /* CwlCatchException.h in Headers */ = {isa = PBXBuildFile; fileRef = 93B64135A2D6DE05C12BD2811A075164 /* CwlCatchException.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F091E543E3E82B7E7DF7E071B14964E5 /* RNConcurrentBlockOperation-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FF40866A0905995981B2D3FBF04B72 /* RNConcurrentBlockOperation-dummy.m */; };
 		F32B9D0318D13B740E6D88E16709FEA3 /* HaveCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F1A43A724CB2B3F257D5EDE552313F /* HaveCount.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		F4EE282D8435D54A662C6DDD30A3D2CD /* CwlCatchException.m in Sources */ = {isa = PBXBuildFile; fileRef = 02398090696ADEC098CBE3E80AD5F0CC /* CwlCatchException.m */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		F6EDE3AE485893403E9524C380480210 /* NSURLRequest+HTTPBodyTesting.h in Headers */ = {isa = PBXBuildFile; fileRef = FA3CBDECD528614C3882F1F13C78D98E /* NSURLRequest+HTTPBodyTesting.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F89C5BBD04C67D5FA0D7354DD3F5C750 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8067725DB9597EF07A310B09120BFFF /* CFNetwork.framework */; };
+		FA3BB249C7ACBE3C223AE78F994C2ED6 /* HLSParserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497737A3F9A4FC9551097AA0474C2836 /* HLSParserError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0707965A1BFDB168F96925EC5AD22401 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5B55C98EAF3B3EA1F06186266C27852E;
-			remoteInfo = RNConcurrentBlockOperation;
-		};
 		13DFBEA4B440538206551300515C4654 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 6DEB8402D2861451E5FE92DE80E94B39;
 			remoteInfo = "Pods-HLSAudioPlayer_Example";
+		};
+		5365BDC54EF12CBF6E9A2D1209A33AAD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 503285D8BDE760E8A0E3B5F56785F7CA;
+			remoteInfo = RNConcurrentBlockOperation;
 		};
 		5554A9AF7FE09EAB24DD4D30A15DB64F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -157,14 +156,14 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = B26D9905E57361FCEA05237B06B45285;
+			remoteGlobalIDString = E516735951AAC2FFFF925D3D202FC8F5;
 			remoteInfo = HLSAudioPlayer;
 		};
 		823BED34D90D924AB6A299B5DBB56869 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 5B55C98EAF3B3EA1F06186266C27852E;
+			remoteGlobalIDString = 503285D8BDE760E8A0E3B5F56785F7CA;
 			remoteInfo = RNConcurrentBlockOperation;
 		};
 		EB0271BC177BB1EB463D139A53A9EB64 /* PBXContainerItemProxy */ = {
@@ -177,54 +176,50 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0063FBCA21918FDC00350063 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
-		0063FBCC2191A00100350063 /* coo-coo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "coo-coo.mp3"; sourceTree = "<group>"; };
 		006A75B9F05214A15187B009D532C358 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00D60A022190339B009AAE0D /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = HLSAudioPlayer/Resources/Media.xcassets; sourceTree = "<group>"; };
-		00D60A042190417F009AAE0D /* HLSPlayerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLSPlayerError.swift; sourceTree = "<group>"; };
-		00FF8F6121923CE2004B138E /* HLSGestureHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLSGestureHelper.swift; sourceTree = "<group>"; };
 		02398090696ADEC098CBE3E80AD5F0CC /* CwlCatchException.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CwlCatchException.m; path = Carthage/Checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/CwlCatchException.m; sourceTree = "<group>"; };
 		023C274084E08BF63D6772BA50CF4D68 /* ToSucceed.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToSucceed.swift; path = Sources/Nimble/Matchers/ToSucceed.swift; sourceTree = "<group>"; };
 		032EA970BDB8456D47ED5E63B1669774 /* BeginWith.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeginWith.swift; path = Sources/Nimble/Matchers/BeginWith.swift; sourceTree = "<group>"; };
-		09B57DEA61F4438630C83E0ACBCAD774 /* HLSAudioPlayer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = HLSAudioPlayer.modulemap; sourceTree = "<group>"; };
 		0B248E8426C5F3AC620BADDB2CB13A11 /* mach_excServer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = mach_excServer.h; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlMachBadInstructionHandler/mach_excServer.h; sourceTree = "<group>"; };
-		0D0EB79A19F7419DED21E0DF8CE65F2C /* HLSParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HLSParser.swift; sourceTree = "<group>"; };
 		0D10B594A92A0D6421D3B8CED42928D0 /* BeVoid.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeVoid.swift; path = Sources/Nimble/Matchers/BeVoid.swift; sourceTree = "<group>"; };
 		0DB44FC5307EA47DE1B9821C982A171C /* OHHTTPStubsResponse+JSON.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "OHHTTPStubsResponse+JSON.h"; path = "OHHTTPStubs/Sources/JSON/OHHTTPStubsResponse+JSON.h"; sourceTree = "<group>"; };
 		0F585783D62A96763A1062E8E88A9A1B /* OHHTTPStubs+NSURLSessionConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "OHHTTPStubs+NSURLSessionConfiguration.m"; path = "OHHTTPStubs/Sources/NSURLSession/OHHTTPStubs+NSURLSessionConfiguration.m"; sourceTree = "<group>"; };
+		10895D5168CBA0054F6548E4EBDC68E5 /* HLSSegmentDownloader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HLSSegmentDownloader.swift; sourceTree = "<group>"; };
 		112A5CA7A1CC4CBE911C8F11B1C93D15 /* AllPass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AllPass.swift; path = Sources/Nimble/Matchers/AllPass.swift; sourceTree = "<group>"; };
 		119D0502F2926934356FAE00D18F45D2 /* BeAKindOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeAKindOf.swift; path = Sources/Nimble/Matchers/BeAKindOf.swift; sourceTree = "<group>"; };
 		11B5FE6BD2F15519317E5774DDAD8750 /* NMBObjCMatcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NMBObjCMatcher.swift; path = Sources/Nimble/Adapters/NMBObjCMatcher.swift; sourceTree = "<group>"; };
 		12DAD5E51F9486C14AC8DC2646BA47AB /* Errors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Errors.swift; path = Sources/Nimble/Utils/Errors.swift; sourceTree = "<group>"; };
 		142914FF52B1A187F80F8AD4A2DBBC0C /* OHPathHelpers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OHPathHelpers.h; path = OHHTTPStubs/Sources/OHPathHelpers/OHPathHelpers.h; sourceTree = "<group>"; };
 		15F0BC2748B19BA8D26ED83E8A1354EE /* Pods-HLSAudioPlayer_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HLSAudioPlayer_Example-resources.sh"; sourceTree = "<group>"; };
+		1BEEB06E9A096EAA094CB450124AAE0B /* Media.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = HLSAudioPlayer/Resources/Media.xcassets; sourceTree = "<group>"; };
 		1FD918B2631848991D421A5F50F08CF4 /* Pods-HLSAudioPlayer_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HLSAudioPlayer_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		22DDC437A1EB1A69D4950426701E43A0 /* CwlMachBadInstructionHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CwlMachBadInstructionHandler.m; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlMachBadInstructionHandler/CwlMachBadInstructionHandler.m; sourceTree = "<group>"; };
 		22EBBF6AD3B1A3C80525A025792196B0 /* CwlBadInstructionException.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CwlBadInstructionException.swift; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlPreconditionTesting/CwlBadInstructionException.swift; sourceTree = "<group>"; };
+		22F81725DD3D07ACC51CC0C67BA022D2 /* HLSAudioPlayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HLSAudioPlayer.swift; sourceTree = "<group>"; };
 		2360003F15A2B8584CBF3C19263BC108 /* OHHTTPStubsMethodSwizzling.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OHHTTPStubsMethodSwizzling.h; path = OHHTTPStubs/Sources/NSURLSession/OHHTTPStubsMethodSwizzling.h; sourceTree = "<group>"; };
 		27A0CABEC2374AC118F25E11481CD2EB /* OHHTTPStubs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OHHTTPStubs.h; path = OHHTTPStubs/Sources/OHHTTPStubs.h; sourceTree = "<group>"; };
 		27FF40866A0905995981B2D3FBF04B72 /* RNConcurrentBlockOperation-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RNConcurrentBlockOperation-dummy.m"; sourceTree = "<group>"; };
 		2E33BEAD3BF672A78E346B90A4C8A07E /* ContainElementSatisfying.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ContainElementSatisfying.swift; path = Sources/Nimble/Matchers/ContainElementSatisfying.swift; sourceTree = "<group>"; };
-		2E81E59F570CFA6C2165A7935794390F /* HLSParserError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HLSParserError.swift; sourceTree = "<group>"; };
-		2F80FCDB10F7F6431801E7A33ED456B8 /* HLSAudioPlayer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HLSAudioPlayer-prefix.pch"; sourceTree = "<group>"; };
 		32606D5A0F70BCB0A3CB124E2CE101F5 /* Pods_HLSAudioPlayer_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HLSAudioPlayer_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		330E8E4019782EB9FBA136C6E897689C /* DSL.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DSL.m; path = Sources/NimbleObjectiveC/DSL.m; sourceTree = "<group>"; };
-		33D14FC6E50C971D134E67A25934E795 /* HLSMediaTrackData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HLSMediaTrackData.swift; sourceTree = "<group>"; };
 		343386AFCA853ABF97E861589F86CC53 /* Pods-HLSAudioPlayer_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HLSAudioPlayer_Example.release.xcconfig"; sourceTree = "<group>"; };
 		34B2520A81F5E20815BA2FF411E0BC9E /* MatcherProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MatcherProtocols.swift; path = Sources/Nimble/Matchers/MatcherProtocols.swift; sourceTree = "<group>"; };
 		34FEB00448B89903B4C6219C80C228C0 /* OHHTTPStubsResponse+JSON.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "OHHTTPStubsResponse+JSON.m"; path = "OHHTTPStubs/Sources/JSON/OHHTTPStubsResponse+JSON.m"; sourceTree = "<group>"; };
+		35880A6F02FFAE7A3EF1D8F79EDEDA20 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		383412FB46748CC1D45B5062D3458EBF /* Pods-HLSAudioPlayer_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HLSAudioPlayer_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		3A94B017142F1C69EC70D0308411A594 /* NMBExceptionCapture.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NMBExceptionCapture.h; path = Sources/NimbleObjectiveC/NMBExceptionCapture.h; sourceTree = "<group>"; };
 		3B954E4547CB6248315CD939041E0C0B /* OHHTTPStubs.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = OHHTTPStubs.modulemap; sourceTree = "<group>"; };
 		3C4A19269C4D10735FE7003F02590CCD /* Nimble.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Nimble.h; path = Sources/Nimble/Nimble.h; sourceTree = "<group>"; };
 		3F4D8A69F13A7F69EFF0C8279D4FA228 /* Pods-HLSAudioPlayer_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HLSAudioPlayer_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		42C5A9702BC31479071ACEC2689D29D7 /* String+Slicing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "String+Slicing.swift"; sourceTree = "<group>"; };
 		441C3C86EF476218E54C6728E262568E /* Stringers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Stringers.swift; path = Sources/Nimble/Utils/Stringers.swift; sourceTree = "<group>"; };
 		442A57C169F51AC98237C2119D33E99E /* BeCloseTo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeCloseTo.swift; path = Sources/Nimble/Matchers/BeCloseTo.swift; sourceTree = "<group>"; };
 		44E95DDE62FB93C2DD13F1D0B1C399DE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		450473330C298145E1CC6EB6C5B389E6 /* Pods-HLSAudioPlayer_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HLSAudioPlayer_Example-frameworks.sh"; sourceTree = "<group>"; };
+		47D07588D7CE7C1345A476512BF382EF /* HLSAudioPlayer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HLSAudioPlayer.xcconfig; sourceTree = "<group>"; };
 		4913D370C390EA72128E772FBADA1AA0 /* RNConcurrentBlockOperation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RNConcurrentBlockOperation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		497737A3F9A4FC9551097AA0474C2836 /* HLSParserError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HLSParserError.swift; sourceTree = "<group>"; };
 		4B4EDF98440DC9F2659DDFE9F401E4C4 /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D010981472B0AB2CFFC9FC67ADC0782 /* HLSGestureHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HLSGestureHelper.swift; sourceTree = "<group>"; };
 		4DCEAC33855735495E5D4AC2A92F3BAF /* CwlMachBadInstructionHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CwlMachBadInstructionHandler.h; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlMachBadInstructionHandler/include/CwlMachBadInstructionHandler.h; sourceTree = "<group>"; };
 		4DF5F4DC2CCDAECCD2E89CFF96114D8C /* Await.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Await.swift; path = Sources/Nimble/Utils/Await.swift; sourceTree = "<group>"; };
 		4EE9C1AC3682133C1E4F98342F895D0B /* ThrowError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThrowError.swift; path = Sources/Nimble/Matchers/ThrowError.swift; sourceTree = "<group>"; };
@@ -232,6 +227,7 @@
 		4FC177A63AF248913FF0EB37E0F930A6 /* ThrowAssertion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThrowAssertion.swift; path = Sources/Nimble/Matchers/ThrowAssertion.swift; sourceTree = "<group>"; };
 		568D8F2F489E05B7F946B7CA8B2959C3 /* AdapterProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AdapterProtocols.swift; path = Sources/Nimble/Adapters/AdapterProtocols.swift; sourceTree = "<group>"; };
 		56F56EE01348EBC9E0F00A17600F6B3E /* SourceLocation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SourceLocation.swift; path = Sources/Nimble/Utils/SourceLocation.swift; sourceTree = "<group>"; };
+		593A84A3CA7B2C04D842D8EA82B7E9F1 /* HLSParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HLSParser.swift; sourceTree = "<group>"; };
 		59857E5F211548DB7F050D66C4D84C8E /* OHHTTPStubs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OHHTTPStubs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A62A4C49D6DC7708861B0BE9FC5EED0 /* EndWith.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EndWith.swift; path = Sources/Nimble/Matchers/EndWith.swift; sourceTree = "<group>"; };
 		5F53AC3531AFC6326401851C86FCD21E /* OHHTTPStubs.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OHHTTPStubs.xcconfig; sourceTree = "<group>"; };
@@ -239,15 +235,15 @@
 		6207877D51F54FEAAC445905FBD02C0E /* Pods-HLSAudioPlayer_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HLSAudioPlayer_Example-umbrella.h"; sourceTree = "<group>"; };
 		63169182384DA3E7EAF22C0B5D073492 /* CwlCatchException.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CwlCatchException.swift; path = Carthage/Checkouts/CwlCatchException/Sources/CwlCatchException/CwlCatchException.swift; sourceTree = "<group>"; };
 		6614E8F6BA3A96A4B031471D7E965926 /* MatchError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MatchError.swift; path = Sources/Nimble/Matchers/MatchError.swift; sourceTree = "<group>"; };
-		67371986637A5FF9F0351D84FE646042 /* HLSAudioPlayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HLSAudioPlayer.swift; sourceTree = "<group>"; };
+		679F8C8DF150733FB1FF88DD646B8FF7 /* String+Slicing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "String+Slicing.swift"; sourceTree = "<group>"; };
 		67C0062A2A1019443A71FEB6830BEB51 /* Pods-HLSAudioPlayer_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HLSAudioPlayer_Tests-dummy.m"; sourceTree = "<group>"; };
-		68BD47B0650D3641163794C13A503BE6 /* HLSAudioPlayer.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = HLSAudioPlayer.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		69FFE5CD8095C6B9AF5C1578BB0E0276 /* DSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DSL.swift; path = Sources/Nimble/DSL.swift; sourceTree = "<group>"; };
 		6CE1A621914E1B3A4A5ABDDB444A480D /* Equal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Equal.swift; path = Sources/Nimble/Matchers/Equal.swift; sourceTree = "<group>"; };
 		6D06AA7A8314F96146663954759524D9 /* Predicate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Predicate.swift; path = Sources/Nimble/Matchers/Predicate.swift; sourceTree = "<group>"; };
 		6E6CDD4A7C85D27FD8E41231D9C17332 /* OHHTTPStubsResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OHHTTPStubsResponse.m; path = OHHTTPStubs/Sources/OHHTTPStubsResponse.m; sourceTree = "<group>"; };
 		6F8EBD68396F8D9AB3367AE5E59D3551 /* RNConcurrentBlockOperation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RNConcurrentBlockOperation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FFB33126B2561531A686C36C913A871 /* Compatibility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Compatibility.h; path = OHHTTPStubs/Sources/Compatibility.h; sourceTree = "<group>"; };
+		707CE5FC150E9F89482A665EACF3A4D9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		728A1AAAB59BC185A80080B82C3021BA /* BeEmpty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeEmpty.swift; path = Sources/Nimble/Matchers/BeEmpty.swift; sourceTree = "<group>"; };
 		733425BCE78FCBFB8D206C614AD09092 /* OHHTTPStubs-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OHHTTPStubs-umbrella.h"; sourceTree = "<group>"; };
 		748C8CF3F264C351BFA7F8C9C943C9E8 /* CwlPreconditionTesting.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CwlPreconditionTesting.h; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlPreconditionTesting/Mach/CwlPreconditionTesting.h; sourceTree = "<group>"; };
@@ -259,24 +255,25 @@
 		7EAA9318A24D36F783DDF6D0766BA176 /* PostNotification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PostNotification.swift; path = Sources/Nimble/Matchers/PostNotification.swift; sourceTree = "<group>"; };
 		7F303E3BE9BFC47594D7DC00991DCD1E /* Pods-HLSAudioPlayer_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HLSAudioPlayer_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		7FA311DE445473D33F17BFE4DB21BDEE /* BeNil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeNil.swift; path = Sources/Nimble/Matchers/BeNil.swift; sourceTree = "<group>"; };
+		8334645816B4FD877B54188774D48BB0 /* HLSMediaTrackData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HLSMediaTrackData.swift; sourceTree = "<group>"; };
+		836F90DB66F670459D4BD20B67CF1C9A /* HLSMediaTrack.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HLSMediaTrack.swift; sourceTree = "<group>"; };
+		84E7BC2332851C109C0BFB5C788599AB /* HLSMediaType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HLSMediaType.swift; sourceTree = "<group>"; };
 		886B590AD35857F52E75EF782B74E203 /* Nimble-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Nimble-dummy.m"; sourceTree = "<group>"; };
-		8978BF49E0F85A944DDA7ECF793CEEFB /* HLSAudioPlayer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HLSAudioPlayer-dummy.m"; sourceTree = "<group>"; };
-		89CDFC64883E44EDB42876A603A1A185 /* HLSMediaTrack.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HLSMediaTrack.swift; sourceTree = "<group>"; };
 		8C5393C18B04249B9F30BC9740D3A641 /* OHHTTPStubsSwift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OHHTTPStubsSwift.swift; path = OHHTTPStubs/Sources/Swift/OHHTTPStubsSwift.swift; sourceTree = "<group>"; };
 		8C8661558BA10F364008AD04AEE93D1F /* OHHTTPStubs-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OHHTTPStubs-prefix.pch"; sourceTree = "<group>"; };
-		8C9AE2871627DE4F5AD57EE1F0951B52 /* HLSMediaSegment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HLSMediaSegment.swift; sourceTree = "<group>"; };
 		8CF51D31E69F37C5148CC26512EA3437 /* CwlCatchBadInstruction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CwlCatchBadInstruction.swift; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlPreconditionTesting/CwlCatchBadInstruction.swift; sourceTree = "<group>"; };
 		92F1A43A724CB2B3F257D5EDE552313F /* HaveCount.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HaveCount.swift; path = Sources/Nimble/Matchers/HaveCount.swift; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		93B64135A2D6DE05C12BD2811A075164 /* CwlCatchException.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CwlCatchException.h; path = Carthage/Checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchException.h; sourceTree = "<group>"; };
+		942AF037B5AB3B5957E5CBD0C4D307A3 /* HLSPlayerError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HLSPlayerError.swift; sourceTree = "<group>"; };
 		94D885BB849B1F34168A0B3472527F3A /* FailureMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FailureMessage.swift; path = Sources/Nimble/FailureMessage.swift; sourceTree = "<group>"; };
 		9582577FFE4BBAF0B0ABBD09B4BCE36F /* DSL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DSL.h; path = Sources/NimbleObjectiveC/DSL.h; sourceTree = "<group>"; };
 		95A0AD19FF6B4317A3A9F3BDC57C3B7D /* Pods-HLSAudioPlayer_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-HLSAudioPlayer_Example.modulemap"; sourceTree = "<group>"; };
-		974D9306C649F83242F7D59F7D713831 /* HLSAudioPlayer.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = HLSAudioPlayer.xib; path = HLSAudioPlayer/Resources/UI/HLSAudioPlayer.xib; sourceTree = "<group>"; };
+		988E29D6A488A4EA82B0E817185246B6 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9C6B4FAA07CACD75407A07B3740FB266 /* Expectation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Expectation.swift; path = Sources/Nimble/Expectation.swift; sourceTree = "<group>"; };
-		9C9004C8DC2C88E4CFD084E7494824C7 /* HLSAudioPlayer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HLSAudioPlayer.xcconfig; sourceTree = "<group>"; };
 		9DD9FE6E10B87F2EFD44F672E2E9A815 /* CwlDarwinDefinitions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CwlDarwinDefinitions.swift; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlPreconditionTesting/CwlDarwinDefinitions.swift; sourceTree = "<group>"; };
 		A059A47038843D75E0050E22B8877BF1 /* Pods-HLSAudioPlayer_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HLSAudioPlayer_Example-dummy.m"; sourceTree = "<group>"; };
+		A0A3DAD7CB58D81D018F00DE563F247B /* HLSAudioPlayer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HLSAudioPlayer-prefix.pch"; sourceTree = "<group>"; };
 		A6B7479D8C822133F2DFDD9FD8CC3830 /* BeIdenticalTo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeIdenticalTo.swift; path = Sources/Nimble/Matchers/BeIdenticalTo.swift; sourceTree = "<group>"; };
 		A6DBF43BFA4D346BD73539E6623B7ED9 /* NSURLRequest+HTTPBodyTesting.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSURLRequest+HTTPBodyTesting.m"; path = "OHHTTPStubs/Sources/NSURLSession/NSURLRequest+HTTPBodyTesting.m"; sourceTree = "<group>"; };
 		A88D235C62506397ADCF3DA9360FA0A8 /* MatcherFunc.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MatcherFunc.swift; path = Sources/Nimble/Matchers/MatcherFunc.swift; sourceTree = "<group>"; };
@@ -285,27 +282,25 @@
 		AF41C634C211F371A7EF147E619B5605 /* Contain.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Contain.swift; path = Sources/Nimble/Matchers/Contain.swift; sourceTree = "<group>"; };
 		AFD292E71148730168E4FF258751452B /* BeLessThan.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeLessThan.swift; path = Sources/Nimble/Matchers/BeLessThan.swift; sourceTree = "<group>"; };
 		B137361F037CD47A12E11A5D1F4E61BE /* Pods-HLSAudioPlayer_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HLSAudioPlayer_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		B25CA54175E8508EE7C8732195566D41 /* HLSAudioPlayer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = HLSAudioPlayer.modulemap; sourceTree = "<group>"; };
 		B28293BD145EF1703041920B33C05DC2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B53B89DCD17AE73995CE23050F62E344 /* HLSAudioPlayer.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = HLSAudioPlayer.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B75B70B57EE1E6F01F83F5ECD59FEDE2 /* Nimble.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Nimble.modulemap; sourceTree = "<group>"; };
-		B7D18D85B4A289AE1386C608D292F099 /* HLSSegmentDownloader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HLSSegmentDownloader.swift; sourceTree = "<group>"; };
 		B8EF576ED759A9A868D9767485118A36 /* RNConcurrentBlockOperation-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RNConcurrentBlockOperation-prefix.pch"; sourceTree = "<group>"; };
 		BA345ECDCF22262F3293B39B8084B0B6 /* BeAnInstanceOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeAnInstanceOf.swift; path = Sources/Nimble/Matchers/BeAnInstanceOf.swift; sourceTree = "<group>"; };
 		BB42D6FCAD492C1D14E3DFEF32E34502 /* RNConcurrentBlockOperation-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RNConcurrentBlockOperation-umbrella.h"; sourceTree = "<group>"; };
 		BC182A9A620B61CFCC23AE8D50A12F7B /* BeGreaterThan.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeGreaterThan.swift; path = Sources/Nimble/Matchers/BeGreaterThan.swift; sourceTree = "<group>"; };
 		BCBC9BE573C54830130B9466F95414F2 /* NMBExceptionCapture.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NMBExceptionCapture.m; path = Sources/NimbleObjectiveC/NMBExceptionCapture.m; sourceTree = "<group>"; };
 		BEAEE439326BAFBBAA52CD413FA524CD /* BeLogical.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeLogical.swift; path = Sources/Nimble/Matchers/BeLogical.swift; sourceTree = "<group>"; };
+		C0BBE1FC75B2B6A49691E4CABDDED106 /* HLSMediaSegment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HLSMediaSegment.swift; sourceTree = "<group>"; };
 		C1CD384B740C453AAAD00B51FD6C4450 /* Match.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Match.swift; path = Sources/Nimble/Matchers/Match.swift; sourceTree = "<group>"; };
-		C20F8241B1C6C074AACDBEB1547ED60E /* HLSAudioPlayer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HLSAudioPlayer-umbrella.h"; sourceTree = "<group>"; };
-		C24E798C02DCD7F6EE37C84710DBAD19 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		C8067725DB9597EF07A310B09120BFFF /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
-		C81D8435CCA790022BD56BEB952CE925 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C902E0194F6381C9CC4259892262709D /* ExpectationMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpectationMessage.swift; path = Sources/Nimble/ExpectationMessage.swift; sourceTree = "<group>"; };
 		C945DCD43F690E34D9FDC1D764194756 /* NMBStringify.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NMBStringify.m; path = Sources/NimbleObjectiveC/NMBStringify.m; sourceTree = "<group>"; };
-		C96486F1F5E31E2B4FE1F0087931F96E /* Collection+SafeIndexing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Collection+SafeIndexing.swift"; sourceTree = "<group>"; };
 		C9B3AC919D9877970832ED3731CFA367 /* NimbleXCTestHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NimbleXCTestHandler.swift; path = Sources/Nimble/Adapters/NimbleXCTestHandler.swift; sourceTree = "<group>"; };
 		CA26FEE69D5122E6EF99895CE867D6B5 /* Pods-HLSAudioPlayer_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HLSAudioPlayer_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		CA33789C294951F86FA042FBAF94CF15 /* HLSMediaType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HLSMediaType.swift; sourceTree = "<group>"; };
 		CA7445E8DA6A998CC019AC22BAC22DEC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFA9E01EDC340FC4A48958B4DA8EBA5D /* HLSAudioPlayer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HLSAudioPlayer-umbrella.h"; sourceTree = "<group>"; };
 		D52505C0D153BA02DECA7A5CFE8969C2 /* AssertionRecorder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssertionRecorder.swift; path = Sources/Nimble/Adapters/AssertionRecorder.swift; sourceTree = "<group>"; };
 		D577B0207EDE15C9763048DC9ECB1742 /* RNConcurrentBlockOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RNConcurrentBlockOperation.h; sourceTree = "<group>"; };
 		D784004B7578D52ACB17361E1DB64532 /* NMBStringify.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NMBStringify.h; path = Sources/NimbleObjectiveC/NMBStringify.h; sourceTree = "<group>"; };
@@ -313,19 +308,22 @@
 		D92F5545F443D65A72E2DCE1E67F609C /* Pods_HLSAudioPlayer_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HLSAudioPlayer_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD1B5677E32261C96FF5603AB06D3DC6 /* RNConcurrentBlockOperation.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RNConcurrentBlockOperation.modulemap; sourceTree = "<group>"; };
 		E036C35FD4B88CC72BFA5AD121350759 /* Pods-HLSAudioPlayer_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HLSAudioPlayer_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		E0AC5DA4C5521CB3578494B907F338E5 /* Collection+SafeIndexing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Collection+SafeIndexing.swift"; sourceTree = "<group>"; };
 		E0BF509EF0851BA38B6C2E8D7435F97D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		E0C365B028FB928CC611F8DF4FB62B62 /* XCTestObservationCenter+Register.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "XCTestObservationCenter+Register.m"; path = "Sources/NimbleObjectiveC/XCTestObservationCenter+Register.m"; sourceTree = "<group>"; };
 		E22E5ACF62E1BBCABF83803B12CB1B57 /* SatisfyAnyOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SatisfyAnyOf.swift; path = Sources/Nimble/Matchers/SatisfyAnyOf.swift; sourceTree = "<group>"; };
 		E48E537BDDBF8F6114969F2EA661566A /* Pods-HLSAudioPlayer_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HLSAudioPlayer_Tests-umbrella.h"; sourceTree = "<group>"; };
 		E58C795BBF0AB8B1953E19C8D9851AB7 /* OHHTTPStubsMethodSwizzling.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OHHTTPStubsMethodSwizzling.m; path = OHHTTPStubs/Sources/NSURLSession/OHHTTPStubsMethodSwizzling.m; sourceTree = "<group>"; };
+		E639181611EE9C814E495A127B2DB982 /* HLSAudioPlayer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HLSAudioPlayer-dummy.m"; sourceTree = "<group>"; };
 		E7035884A6CD4972AAD3B05C4188D121 /* HLSAudioPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HLSAudioPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7DA215BEB76261F6AACFB84EB7CFA32 /* Pods-HLSAudioPlayer_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HLSAudioPlayer_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		E87D1D9DA12305CEFDF14F59F0B12EFC /* OHPathHelpers.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OHPathHelpers.m; path = OHHTTPStubs/Sources/OHPathHelpers/OHPathHelpers.m; sourceTree = "<group>"; };
 		E8C0FDC308791C758194E08E2D9AA004 /* RNConcurrentBlockOperation.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RNConcurrentBlockOperation.xcconfig; sourceTree = "<group>"; };
+		E8EB5261B811C5FBB8CC50999F593E82 /* Resources.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		EB007A7F2B41DA0E758EEB49F00EC5C8 /* SatisfyAllOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SatisfyAllOf.swift; path = Sources/Nimble/Matchers/SatisfyAllOf.swift; sourceTree = "<group>"; };
 		EB4FBF51FB0EDD50CE419CB391A1CEAF /* DSL+Wait.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DSL+Wait.swift"; path = "Sources/Nimble/DSL+Wait.swift"; sourceTree = "<group>"; };
 		ED184DF73D76EA428F39A3F80D1B2991 /* Pods-HLSAudioPlayer_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-HLSAudioPlayer_Tests.modulemap"; sourceTree = "<group>"; };
-		F077E6F22C7EF5BC1EF31896F93D48F5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0E4EB336C0D5328E10A32FDE128A200 /* HLSAudioPlayer.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = HLSAudioPlayer.xib; sourceTree = "<group>"; };
 		F1F1FEAC3458E22FFF11842231FF2EED /* Async.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Async.swift; path = Sources/Nimble/Matchers/Async.swift; sourceTree = "<group>"; };
 		F6C4EA7A2348719E4025497B81F48708 /* OHHTTPStubsResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OHHTTPStubsResponse.h; path = OHHTTPStubs/Sources/OHHTTPStubsResponse.h; sourceTree = "<group>"; };
 		F9D4FC5103C39AA2FAEF30C8E98A9859 /* Nimble-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Nimble-umbrella.h"; sourceTree = "<group>"; };
@@ -347,15 +345,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1218A0E724934A98B6C16216E421697E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7349E434B25782A195206D5AE35B5B6F /* Foundation.framework in Frameworks */,
-				773444924FCFFA8AB4597D02D43B2F46 /* RNConcurrentBlockOperation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4C9707A17D0C3936E4A0B8323D17DFE3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -373,11 +362,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B8D8C1C9FE8FFC031300B51C2E7A97F5 /* Frameworks */ = {
+		8815822AC4BC18F40FBDE848D1EF10AC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30D93305031ECABBE516D5EE0FEF0D07 /* Foundation.framework in Frameworks */,
+				81E785E7114C0C40DEEFD6188C3925C7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF20D2620BDB6BE2D55CC29BEEFCDB6C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44BF0B026C5AAC9FD04505298C7458F3 /* Foundation.framework in Frameworks */,
+				998F4AC006B0F02AF1B4440311B262AE /* RNConcurrentBlockOperation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,17 +390,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		113E45F583296BB3A71BB3198F40DDFD /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				0063FBCC2191A00100350063 /* coo-coo.mp3 */,
-				974D9306C649F83242F7D59F7D713831 /* HLSAudioPlayer.xib */,
-				00D60A022190339B009AAE0D /* Media.xcassets */,
-				0063FBCA21918FDC00350063 /* Resources.swift */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
 		16DCCBE27DCCB5E2BD1E8F611C71FFED /* OHPathHelpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -410,6 +397,15 @@
 				E87D1D9DA12305CEFDF14F59F0B12EFC /* OHPathHelpers.m */,
 			);
 			name = OHPathHelpers;
+			sourceTree = "<group>";
+		};
+		16F595645CF48A09BAD3890AE1E4F832 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1BEEB06E9A096EAA094CB450124AAE0B /* Media.xcassets */,
+				DC5A9168C1A49F39C0CC49910FE0E0AE /* UI */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		1C5A4E9BF8043FC6E9A69759FEA9E037 /* NSURLSession */ = {
@@ -440,7 +436,7 @@
 		208E6583FA16644C73E345A98E86A386 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B25C7FAE7DED2291D54E45DB502A3CA4 /* HLSAudioPlayer */,
+				C25716C2A2FCD7B94BD785035388861E /* HLSAudioPlayer */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -455,29 +451,6 @@
 				6E6CDD4A7C85D27FD8E41231D9C17332 /* OHHTTPStubsResponse.m */,
 			);
 			name = Core;
-			sourceTree = "<group>";
-		};
-		322549B6D1050709DD727C5408D96C71 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				09B57DEA61F4438630C83E0ACBCAD774 /* HLSAudioPlayer.modulemap */,
-				9C9004C8DC2C88E4CFD084E7494824C7 /* HLSAudioPlayer.xcconfig */,
-				8978BF49E0F85A944DDA7ECF793CEEFB /* HLSAudioPlayer-dummy.m */,
-				2F80FCDB10F7F6431801E7A33ED456B8 /* HLSAudioPlayer-prefix.pch */,
-				C20F8241B1C6C074AACDBEB1547ED60E /* HLSAudioPlayer-umbrella.h */,
-				F077E6F22C7EF5BC1EF31896F93D48F5 /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/HLSAudioPlayer";
-			sourceTree = "<group>";
-		};
-		3B5B1DA3DEF614A5EA7F89071921D952 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				67371986637A5FF9F0351D84FE646042 /* HLSAudioPlayer.swift */,
-			);
-			name = View;
-			path = HLSAudioPlayer/Sources/View;
 			sourceTree = "<group>";
 		};
 		3BA646C7CEC43BF426610760F2AF39E6 /* iOS */ = {
@@ -530,17 +503,13 @@
 			path = RNConcurrentBlockOperation;
 			sourceTree = "<group>";
 		};
-		5C8EFE3E13C6E8EC4AB4D1F77BE44634 /* Support */ = {
+		56CF26473334231A1B4A4A621E1E68A1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C96486F1F5E31E2B4FE1F0087931F96E /* Collection+SafeIndexing.swift */,
-				0D0EB79A19F7419DED21E0DF8CE65F2C /* HLSParser.swift */,
-				B7D18D85B4A289AE1386C608D292F099 /* HLSSegmentDownloader.swift */,
-				42C5A9702BC31479071ACEC2689D29D7 /* String+Slicing.swift */,
-				00FF8F6121923CE2004B138E /* HLSGestureHelper.swift */,
+				22F81725DD3D07ACC51CC0C67BA022D2 /* HLSAudioPlayer.swift */,
 			);
-			name = Support;
-			path = HLSAudioPlayer/Sources/Support;
+			name = View;
+			path = HLSAudioPlayer/Sources/View;
 			sourceTree = "<group>";
 		};
 		7B8AF3DCEF00FB7EC29C04D2E60B9AC9 /* Support Files */ = {
@@ -697,20 +666,6 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		B25C7FAE7DED2291D54E45DB502A3CA4 /* HLSAudioPlayer */ = {
-			isa = PBXGroup;
-			children = (
-				F444D960E3C8793420653E07A9ECDA93 /* Model */,
-				CCAE98DD704E3502DEE25194593E0083 /* Pod */,
-				113E45F583296BB3A71BB3198F40DDFD /* Resources */,
-				5C8EFE3E13C6E8EC4AB4D1F77BE44634 /* Support */,
-				322549B6D1050709DD727C5408D96C71 /* Support Files */,
-				3B5B1DA3DEF614A5EA7F89071921D952 /* View */,
-			);
-			name = HLSAudioPlayer;
-			path = ../..;
-			sourceTree = "<group>";
-		};
 		B46850B4CC5B64956BD813336C046C8A /* JSON */ = {
 			isa = PBXGroup;
 			children = (
@@ -720,12 +675,40 @@
 			name = JSON;
 			sourceTree = "<group>";
 		};
+		B677290B8EF466CD26F975D1A9EDF77A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C0BBE1FC75B2B6A49691E4CABDDED106 /* HLSMediaSegment.swift */,
+				836F90DB66F670459D4BD20B67CF1C9A /* HLSMediaTrack.swift */,
+				8334645816B4FD877B54188774D48BB0 /* HLSMediaTrackData.swift */,
+				84E7BC2332851C109C0BFB5C788599AB /* HLSMediaType.swift */,
+				497737A3F9A4FC9551097AA0474C2836 /* HLSParserError.swift */,
+				942AF037B5AB3B5957E5CBD0C4D307A3 /* HLSPlayerError.swift */,
+			);
+			name = Model;
+			path = HLSAudioPlayer/Sources/Model;
+			sourceTree = "<group>";
+		};
 		C15CF5C1C8A95710FCD39ED8766AB90F /* Swift */ = {
 			isa = PBXGroup;
 			children = (
 				8C5393C18B04249B9F30BC9740D3A641 /* OHHTTPStubsSwift.swift */,
 			);
 			name = Swift;
+			sourceTree = "<group>";
+		};
+		C25716C2A2FCD7B94BD785035388861E /* HLSAudioPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				B677290B8EF466CD26F975D1A9EDF77A /* Model */,
+				FA2068ADD123555D7077ACD2F4C8BEC0 /* Pod */,
+				16F595645CF48A09BAD3890AE1E4F832 /* Resources */,
+				D1D86CEB37F262C8802A492D77343E11 /* Support */,
+				CDD6E3167AC32711BF4BFFE32AD5A844 /* Support Files */,
+				56CF26473334231A1B4A4A621E1E68A1 /* View */,
+			);
+			name = HLSAudioPlayer;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		C995DD5F4E249C0FC8367477CFF12A89 /* Support Files */ = {
@@ -742,28 +725,51 @@
 			path = "../Target Support Files/RNConcurrentBlockOperation";
 			sourceTree = "<group>";
 		};
-		CCAE98DD704E3502DEE25194593E0083 /* Pod */ = {
+		CDD6E3167AC32711BF4BFFE32AD5A844 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				68BD47B0650D3641163794C13A503BE6 /* HLSAudioPlayer.podspec */,
-				C24E798C02DCD7F6EE37C84710DBAD19 /* LICENSE */,
-				C81D8435CCA790022BD56BEB952CE925 /* README.md */,
+				B25CA54175E8508EE7C8732195566D41 /* HLSAudioPlayer.modulemap */,
+				47D07588D7CE7C1345A476512BF382EF /* HLSAudioPlayer.xcconfig */,
+				E639181611EE9C814E495A127B2DB982 /* HLSAudioPlayer-dummy.m */,
+				A0A3DAD7CB58D81D018F00DE563F247B /* HLSAudioPlayer-prefix.pch */,
+				CFA9E01EDC340FC4A48958B4DA8EBA5D /* HLSAudioPlayer-umbrella.h */,
+				707CE5FC150E9F89482A665EACF3A4D9 /* Info.plist */,
 			);
-			name = Pod;
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/HLSAudioPlayer";
 			sourceTree = "<group>";
 		};
-		F444D960E3C8793420653E07A9ECDA93 /* Model */ = {
+		D1D86CEB37F262C8802A492D77343E11 /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				2E81E59F570CFA6C2165A7935794390F /* HLSParserError.swift */,
-				8C9AE2871627DE4F5AD57EE1F0951B52 /* HLSMediaSegment.swift */,
-				89CDFC64883E44EDB42876A603A1A185 /* HLSMediaTrack.swift */,
-				33D14FC6E50C971D134E67A25934E795 /* HLSMediaTrackData.swift */,
-				CA33789C294951F86FA042FBAF94CF15 /* HLSMediaType.swift */,
-				00D60A042190417F009AAE0D /* HLSPlayerError.swift */,
+				E0AC5DA4C5521CB3578494B907F338E5 /* Collection+SafeIndexing.swift */,
+				4D010981472B0AB2CFFC9FC67ADC0782 /* HLSGestureHelper.swift */,
+				593A84A3CA7B2C04D842D8EA82B7E9F1 /* HLSParser.swift */,
+				10895D5168CBA0054F6548E4EBDC68E5 /* HLSSegmentDownloader.swift */,
+				E8EB5261B811C5FBB8CC50999F593E82 /* Resources.swift */,
+				679F8C8DF150733FB1FF88DD646B8FF7 /* String+Slicing.swift */,
 			);
-			name = Model;
-			path = HLSAudioPlayer/Sources/Model;
+			name = Support;
+			path = HLSAudioPlayer/Sources/Support;
+			sourceTree = "<group>";
+		};
+		DC5A9168C1A49F39C0CC49910FE0E0AE /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				F0E4EB336C0D5328E10A32FDE128A200 /* HLSAudioPlayer.xib */,
+			);
+			name = UI;
+			path = HLSAudioPlayer/Resources/UI;
+			sourceTree = "<group>";
+		};
+		FA2068ADD123555D7077ACD2F4C8BEC0 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				B53B89DCD17AE73995CE23050F62E344 /* HLSAudioPlayer.podspec */,
+				35880A6F02FFAE7A3EF1D8F79EDEDA20 /* LICENSE */,
+				988E29D6A488A4EA82B0E817185246B6 /* README.md */,
+			);
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		FAB5D83DAF50E11F5F9A3F37F0746BBE /* Frameworks */ = {
@@ -778,11 +784,12 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		46B9E6FC70CEA0C6D3876E45981F137D /* Headers */ = {
+		37294934C5B0C60F37649B196EE8AAA8 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				794BE3E52897A1E649C5FB28740BE8D9 /* HLSAudioPlayer-umbrella.h in Headers */,
+				B0AE06A16BEB37470940058979B1A826 /* RNConcurrentBlockOperation-umbrella.h in Headers */,
+				A498A3F47186FF2340B48805288B3AA7 /* RNConcurrentBlockOperation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -818,15 +825,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DDE5F232926F3E6690A80A7A1D993FC1 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6674003C3854F8D2E5702F565A86FBA2 /* RNConcurrentBlockOperation-umbrella.h in Headers */,
-				E05FD611EAE49AC1D2750F9430113F62 /* RNConcurrentBlockOperation.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E115497439A0323239032BEFD607D001 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -839,6 +837,14 @@
 				DE7422B33CB514ABF6E341418B48384A /* OHHTTPStubsResponse+JSON.h in Headers */,
 				2DE989DE028FDDF17B823DF041F639C3 /* OHHTTPStubsResponse.h in Headers */,
 				374FDB7789245E46F304D314CEEC6AB1 /* OHPathHelpers.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8224884B6A8C13F8E8F64BE4C35B7F6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFA8EC1C512A5CA3A068B9744AD37ABC /* HLSAudioPlayer-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -863,14 +869,14 @@
 			productReference = 59857E5F211548DB7F050D66C4D84C8E /* OHHTTPStubs.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		5B55C98EAF3B3EA1F06186266C27852E /* RNConcurrentBlockOperation */ = {
+		503285D8BDE760E8A0E3B5F56785F7CA /* RNConcurrentBlockOperation */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AE7C6BFAE8389656DCD0584337E527C6 /* Build configuration list for PBXNativeTarget "RNConcurrentBlockOperation" */;
+			buildConfigurationList = 5640287F888E969B5B4609A55FEF3C93 /* Build configuration list for PBXNativeTarget "RNConcurrentBlockOperation" */;
 			buildPhases = (
-				DDE5F232926F3E6690A80A7A1D993FC1 /* Headers */,
-				AA79980346A49052D417013B85267FDF /* Sources */,
-				B8D8C1C9FE8FFC031300B51C2E7A97F5 /* Frameworks */,
-				E7DA7C41CC229378618185212C9EEA35 /* Resources */,
+				37294934C5B0C60F37649B196EE8AAA8 /* Headers */,
+				F3608CBA3AE69CC21C5E225EF2FA51A8 /* Sources */,
+				8815822AC4BC18F40FBDE848D1EF10AC /* Frameworks */,
+				989AA088CE26B4BB92BC52D3BD41A67C /* Resources */,
 			);
 			buildRules = (
 			);
@@ -919,25 +925,6 @@
 			productReference = 32606D5A0F70BCB0A3CB124E2CE101F5 /* Pods_HLSAudioPlayer_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		B26D9905E57361FCEA05237B06B45285 /* HLSAudioPlayer */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CDF2BF29B1CF52FF9074D1A64C01238A /* Build configuration list for PBXNativeTarget "HLSAudioPlayer" */;
-			buildPhases = (
-				46B9E6FC70CEA0C6D3876E45981F137D /* Headers */,
-				80370A976825CC1CB3EDC3650D92D591 /* Sources */,
-				1218A0E724934A98B6C16216E421697E /* Frameworks */,
-				8DEA3359540BEB379A7A264D13B633FB /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1DE9CE370B0CD023293D4BBC7F12D1AE /* PBXTargetDependency */,
-			);
-			name = HLSAudioPlayer;
-			productName = HLSAudioPlayer;
-			productReference = E7035884A6CD4972AAD3B05C4188D121 /* HLSAudioPlayer.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		BA8CEE8372B1448E954D2E354083CA75 /* Pods-HLSAudioPlayer_Tests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4B69B1F7951E91B556F1B28AF4E96AE0 /* Build configuration list for PBXNativeTarget "Pods-HLSAudioPlayer_Tests" */;
@@ -959,6 +946,25 @@
 			productReference = D92F5545F443D65A72E2DCE1E67F609C /* Pods_HLSAudioPlayer_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		E516735951AAC2FFFF925D3D202FC8F5 /* HLSAudioPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 534234B66BC7AA90122FFBE66BB0175D /* Build configuration list for PBXNativeTarget "HLSAudioPlayer" */;
+			buildPhases = (
+				E8224884B6A8C13F8E8F64BE4C35B7F6 /* Headers */,
+				9BDAEBD86DC32379A3B0D338D4E564C4 /* Sources */,
+				CF20D2620BDB6BE2D55CC29BEEFCDB6C /* Frameworks */,
+				322548A7A862B0B58D821A2FCA3544C0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0F8BBA6506BBB032614C2811BD08703D /* PBXTargetDependency */,
+			);
+			name = HLSAudioPlayer;
+			productName = HLSAudioPlayer;
+			productReference = E7035884A6CD4972AAD3B05C4188D121 /* HLSAudioPlayer.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -966,7 +972,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1000;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -980,12 +986,12 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B26D9905E57361FCEA05237B06B45285 /* HLSAudioPlayer */,
+				E516735951AAC2FFFF925D3D202FC8F5 /* HLSAudioPlayer */,
 				5E269AA9A7FBCB9BFD8EA487B43AE7F9 /* Nimble */,
 				27DC2300AFD29465BDBFF705AFF657F5 /* OHHTTPStubs */,
 				6DEB8402D2861451E5FE92DE80E94B39 /* Pods-HLSAudioPlayer_Example */,
 				BA8CEE8372B1448E954D2E354083CA75 /* Pods-HLSAudioPlayer_Tests */,
-				5B55C98EAF3B3EA1F06186266C27852E /* RNConcurrentBlockOperation */,
+				503285D8BDE760E8A0E3B5F56785F7CA /* RNConcurrentBlockOperation */,
 			);
 		};
 /* End PBXProject section */
@@ -1005,13 +1011,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8DEA3359540BEB379A7A264D13B633FB /* Resources */ = {
+		322548A7A862B0B58D821A2FCA3544C0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0063FBCD2191A00100350063 /* coo-coo.mp3 in Resources */,
-				00D60A032190339B009AAE0D /* Media.xcassets in Resources */,
-				180F96BA6905B8BB36C6AFFA12E5A203 /* HLSAudioPlayer.xib in Resources */,
+				3CF66E15FC2E3B669BAE4515F9DA89BA /* HLSAudioPlayer.xib in Resources */,
+				0A7E260A8CB224DB16B2D6E39449CB0D /* Media.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1022,14 +1027,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BDE98787E15A8A477914263AFCEFD7AC /* Resources */ = {
+		989AA088CE26B4BB92BC52D3BD41A67C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E7DA7C41CC229378618185212C9EEA35 /* Resources */ = {
+		BDE98787E15A8A477914263AFCEFD7AC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1108,27 +1113,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		80370A976825CC1CB3EDC3650D92D591 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5FB55C862C3C127FC42218B2FCEA6CBE /* Collection+SafeIndexing.swift in Sources */,
-				00D60A052190417F009AAE0D /* HLSPlayerError.swift in Sources */,
-				6BC577C2790B344C73F67136C21D474A /* HLSAudioPlayer-dummy.m in Sources */,
-				62D0D05990A4850E104E90D322186540 /* HLSAudioPlayer.swift in Sources */,
-				CEAEF44BDCD0463B5978557DBB50401C /* HLSParserError.swift in Sources */,
-				8A2E4BC75BF00D8982D87DC3966F80A6 /* HLSMediaSegment.swift in Sources */,
-				E59B30DDE359C4FDB45CCAA81CDD2F50 /* HLSMediaTrack.swift in Sources */,
-				00FF8F6221923CE2004B138E /* HLSGestureHelper.swift in Sources */,
-				CA7FFE59B746A9C9374E7392C795969E /* HLSMediaTrackData.swift in Sources */,
-				0FCA6E5D333DB9EF04B546C762C74919 /* HLSMediaType.swift in Sources */,
-				636A815838F9C34AD9C2DCE39B2A13F0 /* HLSParser.swift in Sources */,
-				7BADC63F3B0819CB789027024EEA5AA6 /* HLSSegmentDownloader.swift in Sources */,
-				4410A0756DAC2DB79571090DF9075788 /* String+Slicing.swift in Sources */,
-				0063FBCB21918FDC00350063 /* Resources.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		821251BDA57EEFA36E74C2301C03C1DF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1137,12 +1121,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AA79980346A49052D417013B85267FDF /* Sources */ = {
+		9BDAEBD86DC32379A3B0D338D4E564C4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F091E543E3E82B7E7DF7E071B14964E5 /* RNConcurrentBlockOperation-dummy.m in Sources */,
-				3BC49F81C01A36CEF2219823136408BE /* RNConcurrentBlockOperation.m in Sources */,
+				3E744466E9A8F5C4E2EBF79DE6D44185 /* Collection+SafeIndexing.swift in Sources */,
+				47E911A241A35AE2DD092CE924A21D84 /* HLSAudioPlayer-dummy.m in Sources */,
+				8A2AE9D8DBFA7A237D37DBF234A70582 /* HLSAudioPlayer.swift in Sources */,
+				4B50B684EB096BCD80AC4A669B3FD3DD /* HLSGestureHelper.swift in Sources */,
+				ED377544F1842FF0781C7086DD6BF80D /* HLSMediaSegment.swift in Sources */,
+				CDE7E18F0AA581EFBD176EB2DB6ADEE4 /* HLSMediaTrack.swift in Sources */,
+				8399B23F7B6700C458B867F3C5589FA6 /* HLSMediaTrackData.swift in Sources */,
+				4B79D9E0CCEDF6C5DC24F881B0824E9E /* HLSMediaType.swift in Sources */,
+				05F3D5AA4467623D1DA2BB279EB5F9AF /* HLSParser.swift in Sources */,
+				FA3BB249C7ACBE3C223AE78F994C2ED6 /* HLSParserError.swift in Sources */,
+				2F6F0DD43041B8AFB7EDD03FD80AF968 /* HLSPlayerError.swift in Sources */,
+				ADAA2A50CC509596CC77DE0D5EF8AD9C /* HLSSegmentDownloader.swift in Sources */,
+				71C185DBD1BEA57D15C5723DA1A0B55A /* Resources.swift in Sources */,
+				66CBEADDFCE926914CB6B8AA5357BEE3 /* String+Slicing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1170,25 +1166,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F3608CBA3AE69CC21C5E225EF2FA51A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A59D4353E0AFBBC5962CE85CC1C321B9 /* RNConcurrentBlockOperation-dummy.m in Sources */,
+				AA86F8FE93337A4A2854F1A634503622 /* RNConcurrentBlockOperation.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1DE9CE370B0CD023293D4BBC7F12D1AE /* PBXTargetDependency */ = {
+		0F8BBA6506BBB032614C2811BD08703D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = RNConcurrentBlockOperation;
-			target = 5B55C98EAF3B3EA1F06186266C27852E /* RNConcurrentBlockOperation */;
-			targetProxy = 0707965A1BFDB168F96925EC5AD22401 /* PBXContainerItemProxy */;
+			target = 503285D8BDE760E8A0E3B5F56785F7CA /* RNConcurrentBlockOperation */;
+			targetProxy = 5365BDC54EF12CBF6E9A2D1209A33AAD /* PBXContainerItemProxy */;
 		};
 		1E1F02A887FD7ACE0BA88325CD2BE90C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = HLSAudioPlayer;
-			target = B26D9905E57361FCEA05237B06B45285 /* HLSAudioPlayer */;
+			target = E516735951AAC2FFFF925D3D202FC8F5 /* HLSAudioPlayer */;
 			targetProxy = 729D3C18858D793201C19E51D941F336 /* PBXContainerItemProxy */;
 		};
 		5BD126C9F4C912C17BE92A768DBBCCDD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = RNConcurrentBlockOperation;
-			target = 5B55C98EAF3B3EA1F06186266C27852E /* RNConcurrentBlockOperation */;
+			target = 503285D8BDE760E8A0E3B5F56785F7CA /* RNConcurrentBlockOperation */;
 			targetProxy = 823BED34D90D924AB6A299B5DBB56869 /* PBXContainerItemProxy */;
 		};
 		7940D60EE8A285E70B55EC92669B11B1 /* PBXTargetDependency */ = {
@@ -1212,37 +1217,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		03427249EDD079D04D243779F7621495 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E8C0FDC308791C758194E08E2D9AA004 /* RNConcurrentBlockOperation.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/RNConcurrentBlockOperation/RNConcurrentBlockOperation-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/RNConcurrentBlockOperation/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/RNConcurrentBlockOperation/RNConcurrentBlockOperation.modulemap";
-				PRODUCT_MODULE_NAME = RNConcurrentBlockOperation;
-				PRODUCT_NAME = RNConcurrentBlockOperation;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		077EB54552C939F15F3E804508F323D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FF1CA314C98C61B8FB35B3977F321C53 /* Nimble.xcconfig */;
@@ -1268,6 +1242,37 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		16F6BAAE7A9900377D8FEE64F2116D24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8C0FDC308791C758194E08E2D9AA004 /* RNConcurrentBlockOperation.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/RNConcurrentBlockOperation/RNConcurrentBlockOperation-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RNConcurrentBlockOperation/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/RNConcurrentBlockOperation/RNConcurrentBlockOperation.modulemap";
+				PRODUCT_MODULE_NAME = RNConcurrentBlockOperation;
+				PRODUCT_NAME = RNConcurrentBlockOperation;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1468,6 +1473,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
@@ -1507,42 +1513,9 @@
 			};
 			name = Release;
 		};
-		B6166F16CCDE82A1B82BED5B91166014 /* Release */ = {
+		9B90F8DF8D445E2B113849AF56E09B86 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5F53AC3531AFC6326401851C86FCD21E /* OHHTTPStubs.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/OHHTTPStubs/OHHTTPStubs-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/OHHTTPStubs/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/OHHTTPStubs/OHHTTPStubs.modulemap";
-				PRODUCT_MODULE_NAME = OHHTTPStubs;
-				PRODUCT_NAME = OHHTTPStubs;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		BF1DA7A226E506F117F49940D0E1C188 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9C9004C8DC2C88E4CFD084E7494824C7 /* HLSAudioPlayer.xcconfig */;
+			baseConfigurationReference = 47D07588D7CE7C1345A476512BF382EF /* HLSAudioPlayer.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1573,9 +1546,9 @@
 			};
 			name = Release;
 		};
-		C73693436A917E5F3B274764FAFEFCDB /* Release */ = {
+		AD4CB27F21BF0D7E7735A4233C8426B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E8C0FDC308791C758194E08E2D9AA004 /* RNConcurrentBlockOperation.xcconfig */;
+			baseConfigurationReference = 47D07588D7CE7C1345A476512BF382EF /* HLSAudioPlayer.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1586,17 +1559,50 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/RNConcurrentBlockOperation/RNConcurrentBlockOperation-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/RNConcurrentBlockOperation/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/HLSAudioPlayer/HLSAudioPlayer-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/HLSAudioPlayer/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/RNConcurrentBlockOperation/RNConcurrentBlockOperation.modulemap";
-				PRODUCT_MODULE_NAME = RNConcurrentBlockOperation;
-				PRODUCT_NAME = RNConcurrentBlockOperation;
+				MODULEMAP_FILE = "Target Support Files/HLSAudioPlayer/HLSAudioPlayer.modulemap";
+				PRODUCT_MODULE_NAME = HLSAudioPlayer;
+				PRODUCT_NAME = HLSAudioPlayer;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B6166F16CCDE82A1B82BED5B91166014 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F53AC3531AFC6326401851C86FCD21E /* OHHTTPStubs.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/OHHTTPStubs/OHHTTPStubs-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/OHHTTPStubs/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/OHHTTPStubs/OHHTTPStubs.modulemap";
+				PRODUCT_MODULE_NAME = OHHTTPStubs;
+				PRODUCT_NAME = OHHTTPStubs;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1669,6 +1675,38 @@
 			};
 			name = Debug;
 		};
+		E789C1D9A5C7B5404C34F1AAC7C4F299 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8C0FDC308791C758194E08E2D9AA004 /* RNConcurrentBlockOperation.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/RNConcurrentBlockOperation/RNConcurrentBlockOperation-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RNConcurrentBlockOperation/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/RNConcurrentBlockOperation/RNConcurrentBlockOperation.modulemap";
+				PRODUCT_MODULE_NAME = RNConcurrentBlockOperation;
+				PRODUCT_NAME = RNConcurrentBlockOperation;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		F1A8A5EFF2EE00A58A592CB30242E6D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5F53AC3531AFC6326401851C86FCD21E /* OHHTTPStubs.xcconfig */;
@@ -1695,38 +1733,6 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		FCE6404390600482E39870C7FEEC2329 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9C9004C8DC2C88E4CFD084E7494824C7 /* HLSAudioPlayer.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/HLSAudioPlayer/HLSAudioPlayer-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/HLSAudioPlayer/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/HLSAudioPlayer/HLSAudioPlayer.modulemap";
-				PRODUCT_MODULE_NAME = HLSAudioPlayer;
-				PRODUCT_NAME = HLSAudioPlayer;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1781,20 +1787,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AE7C6BFAE8389656DCD0584337E527C6 /* Build configuration list for PBXNativeTarget "RNConcurrentBlockOperation" */ = {
+		534234B66BC7AA90122FFBE66BB0175D /* Build configuration list for PBXNativeTarget "HLSAudioPlayer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				03427249EDD079D04D243779F7621495 /* Debug */,
-				C73693436A917E5F3B274764FAFEFCDB /* Release */,
+				AD4CB27F21BF0D7E7735A4233C8426B0 /* Debug */,
+				9B90F8DF8D445E2B113849AF56E09B86 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CDF2BF29B1CF52FF9074D1A64C01238A /* Build configuration list for PBXNativeTarget "HLSAudioPlayer" */ = {
+		5640287F888E969B5B4609A55FEF3C93 /* Build configuration list for PBXNativeTarget "RNConcurrentBlockOperation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FCE6404390600482E39870C7FEEC2329 /* Debug */,
-				BF1DA7A226E506F117F49940D0E1C188 /* Release */,
+				16F6BAAE7A9900377D8FEE64F2116D24 /* Debug */,
+				E789C1D9A5C7B5404C34F1AAC7C4F299 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
