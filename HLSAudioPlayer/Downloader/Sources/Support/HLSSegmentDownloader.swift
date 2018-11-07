@@ -17,7 +17,7 @@ public class HLSSegmentDownloader {
     private var writers: [URL: FileHandle] = [:]
     private var maxConcurrentDownloadCount: Int
     
-    public init(maxConcurrentDownloadCount: Int = 6) {
+    public init(maxConcurrentDownloadCount: Int = 2) {
         self.maxConcurrentDownloadCount = maxConcurrentDownloadCount
     }
     
