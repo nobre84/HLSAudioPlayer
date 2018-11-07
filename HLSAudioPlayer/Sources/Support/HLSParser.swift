@@ -97,6 +97,10 @@ public class HLSParser {
         return HLSMediaTrackData(version: version, mediaSequence: mediaSequence, allowsCache: allowsCache, targetDuration: targetDuration, segments: segments)
     }
     
+    deinit {
+        print("Parser gone")
+    }
+    
     func parseTrackSegments(from playlist: String) throws -> [HLSMediaSegment] {
         var segments = [HLSMediaSegment]()
         var currentSegmentData = [String: String]()

@@ -108,10 +108,7 @@ class HLSSegmentDownloaderTests: XCTestCase {
         stub(condition: isHost("stub.com")) { request in
             // Stubbing segments
             if let range = self.parseRange(from: request.value(forHTTPHeaderField: "Range")) {
-                let handle = FileHandle(forReadingAtPath: OHPathForFile("stub.ts", type(of: self))!)
-                handle?.seek(toFileOffset: UInt64(range.location))
-                let segmentData = handle?.readData(ofLength: range.length)
-                return OHHTTPStubsResponse(data: segmentData!, statusCode:206, headers:["Content-Type": "video/MP2T"])
+                return OHHTTPStubsResponse(data: Data(count: range.length), statusCode:206, headers:["Content-Type": "video/MP2T"])
             }
             // Stubbing playlists
             let stubPath = OHPathForFile(request.url!.lastPathComponent, type(of: self))
@@ -119,10 +116,10 @@ class HLSSegmentDownloaderTests: XCTestCase {
         }
         
         expect { () -> Void in
-            let parser = try HLSParser(url: URL(string: "https://stub.com/hls_index.m3u8")!)
-            let trackData = parser.tracks[0].data!
+            let segments: [HLSMediaSegment] = [Int](1...100).map { HLSMediaSegment(duration: 10, uri: URL(string: "stub2.ts", relativeTo: URL(string: "http://stubs.com"))!, byteRange: NSRange.init(location: $0, length: 100), title: nil) }
+            let trackData = HLSMediaTrackData(version: 4, mediaSequence: 0, allowsCache: true, targetDuration: 10, segments: segments)
             
-            waitUntil { done in
+            waitUntil(timeout: 5) { done in
                 var calledCount = 0
                 var lastProgress: Double = 0
                 self.downloader.progressHandler = { progress in
@@ -136,7 +133,7 @@ class HLSSegmentDownloaderTests: XCTestCase {
                     expect { () -> Void in
                         _ = try response()
                     }.notTo(throwError())
-                    expect(calledCount) == 23
+                    expect(calledCount) == 100
                     expect(lastProgress) == 1
                     done()
                 }

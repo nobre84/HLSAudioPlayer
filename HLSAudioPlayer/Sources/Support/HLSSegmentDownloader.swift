@@ -17,8 +17,12 @@ public class HLSSegmentDownloader {
     private var writers: [URL: FileHandle] = [:]
     private var maxConcurrentDownloadCount: Int
     
-    public init(maxConcurrentDownloadCount: Int = 2) {
+    public init(maxConcurrentDownloadCount: Int = 6) {
         self.maxConcurrentDownloadCount = maxConcurrentDownloadCount
+    }
+    
+    deinit {
+        print("Downloader gone")
     }
     
     public func downloadSegments(of track: HLSMediaTrackData, completion: @escaping (@escaping () throws -> [URL]) -> Void) {
@@ -51,9 +55,7 @@ public class HLSSegmentDownloader {
                             try self.write(data, at: segment.byteRange?.location, with: writer, url: writerUrl)
                             let segmentSize = Double(segment.byteRange?.length ?? 0)
                             totalDownloadedSize += segmentSize
-                            DispatchQueue.main.async {
-                                self.progressHandler?(totalDownloadedSize / totalSize)
-                            }
+                            self.progressHandler?(totalDownloadedSize / totalSize)
                             finished?(nil)
                         }
                         catch {

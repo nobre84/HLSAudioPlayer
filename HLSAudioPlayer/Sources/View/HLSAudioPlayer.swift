@@ -31,6 +31,10 @@ public class HLSAudioPlayer: UIView {
             handleStateChange(state)
         }
     }
+    
+    deinit {
+        print("Player gone")
+    }
 
     private lazy var coverLayer: CAShapeLayer = {
         let width = iconImageView.bounds.size.width
