@@ -115,6 +115,8 @@ class HLSSegmentDownloaderTests: XCTestCase {
             return fixture(filePath: stubPath!, headers: ["Content-Type":"application/x-mpegURL"])
         }
         
+        let downloader = HLSSegmentDownloader(maxConcurrentDownloadCount: 12)
+        
         expect { () -> Void in
             let segments: [HLSMediaSegment] = [Int](1...100).map { HLSMediaSegment(duration: 10, uri: URL(string: "stub2.ts", relativeTo: URL(string: "http://stubs.com"))!, byteRange: NSRange.init(location: $0, length: 100), title: nil) }
             let trackData = HLSMediaTrackData(version: 4, mediaSequence: 0, allowsCache: true, targetDuration: 10, segments: segments)
@@ -122,14 +124,14 @@ class HLSSegmentDownloaderTests: XCTestCase {
             waitUntil(timeout: 5) { done in
                 var calledCount = 0
                 var lastProgress: Double = 0
-                self.downloader.progressHandler = { progress in
+                downloader.progressHandler = { progress in
                     expect(progress) != lastProgress
                     expect(progress) >= 0
                     expect(progress) <= 1
                     calledCount += 1
                     lastProgress = progress
                 }
-                self.downloader.downloadSegments(of: trackData) { response in
+                downloader.downloadSegments(of: trackData) { response in
                     expect { () -> Void in
                         _ = try response()
                     }.notTo(throwError())
