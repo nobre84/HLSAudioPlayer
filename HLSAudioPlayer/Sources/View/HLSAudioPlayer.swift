@@ -125,7 +125,7 @@ public class HLSAudioPlayer: UIView {
         contentView.frame = bounds
         addSubview(contentView)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
-        contentView.addGestureRecognizer(tapGesture)
+        //contentView.addGestureRecognizer(tapGesture)
         setLoadingPercentage(to: 0)
     }
     

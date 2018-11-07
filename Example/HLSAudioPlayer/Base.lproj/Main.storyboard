@@ -38,6 +38,8 @@
                     </view>
                     <connections>
                         <outlet property="audioPlayer" destination="fC2-cZ-7EJ" id="vne-cS-WHU"/>
+                        <outlet property="centerXConstraint" destination="IQy-bR-0dt" id="kw2-1m-3lp"/>
+                        <outlet property="centerYConstraint" destination="Ywd-eg-JXm" id="UCV-kx-H0w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
