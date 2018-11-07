@@ -20,11 +20,45 @@
     "ios": "8.0"
   },
   "swift_version": "4.2",
-  "source_files": "HLSAudioPlayer/Sources/**/*.*",
-  "resources": "HLSAudioPlayer/Resources/**/*.*",
-  "dependencies": {
-    "RNConcurrentBlockOperation": [
+  "subspecs": [
+    {
+      "name": "Shared",
+      "source_files": "HLSAudioPlayer/Shared/Sources/**/*.*"
+    },
+    {
+      "name": "Parser",
+      "source_files": "HLSAudioPlayer/Parser/Sources/**/*.*",
+      "dependencies": {
+        "HLSAudioPlayer/Shared": [
 
-    ]
-  }
+        ]
+      }
+    },
+    {
+      "name": "Downloader",
+      "source_files": "HLSAudioPlayer/Downloader/Sources/**/*.*",
+      "dependencies": {
+        "HLSAudioPlayer/Parser": [
+
+        ],
+        "RNConcurrentBlockOperation": [
+
+        ]
+      }
+    },
+    {
+      "name": "Player",
+      "source_files": "HLSAudioPlayer/Player/Sources/**/*.*",
+      "resources": "HLSAudioPlayer/Player/Resources/**/*.*",
+      "dependencies": {
+        "HLSAudioPlayer/Downloader": [
+
+        ]
+      }
+    },
+    {
+      "name": "GestureHelper",
+      "source_files": "HLSAudioPlayer/GestureHelper/Sources/**/*.*"
+    }
+  ]
 }

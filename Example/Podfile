@@ -3,7 +3,7 @@ use_frameworks!
 platform :ios, '8.0'
 
 target 'HLSAudioPlayer_Example' do
-  pod 'HLSAudioPlayer', :path => '../'
+  pod 'HLSAudioPlayer/Player', :path => '../'
 
   target 'HLSAudioPlayer_Tests' do
     inherit! :search_paths

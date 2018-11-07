@@ -16,8 +16,32 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
   s.swift_version = '4.2'
 
-  s.source_files = 'HLSAudioPlayer/Sources/**/*.*'
-  s.resources = 'HLSAudioPlayer/Resources/**/*.*'
-  
-  s.dependency 'RNConcurrentBlockOperation'
+  s.subspec 'Shared' do |ss|
+    ss.source_files = 'HLSAudioPlayer/Shared/Sources/**/*.*'
+  end
+
+  s.subspec 'Parser' do |ss|
+    ss.source_files = 'HLSAudioPlayer/Parser/Sources/**/*.*'
+
+    ss.dependency 'HLSAudioPlayer/Shared'
+  end
+
+  s.subspec 'Downloader' do |ss|
+    ss.source_files = 'HLSAudioPlayer/Downloader/Sources/**/*.*'
+
+    ss.dependency 'HLSAudioPlayer/Parser'
+    ss.dependency 'RNConcurrentBlockOperation'
+  end
+
+  s.subspec 'Player' do |ss|
+    ss.source_files = 'HLSAudioPlayer/Player/Sources/**/*.*'
+    ss.resources = 'HLSAudioPlayer/Player/Resources/**/*.*'
+
+    ss.dependency 'HLSAudioPlayer/Downloader'
+  end
+
+  s.subspec 'GestureHelper' do |ss|
+    ss.source_files = 'HLSAudioPlayer/GestureHelper/Sources/**/*.*'
+  end
+
 end
