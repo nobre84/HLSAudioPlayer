@@ -55,7 +55,9 @@ public class HLSSegmentDownloader {
                             try self.write(data, at: segment.byteRange?.location, with: writer, url: writerUrl)
                             let segmentSize = Double(segment.byteRange?.length ?? 0)
                             totalDownloadedSize += segmentSize
-                            self.progressHandler?(totalDownloadedSize / totalSize)
+                            DispatchQueue.main.async {
+                                self.progressHandler?(totalDownloadedSize / totalSize)
+                            }
                             finished?(nil)
                         }
                         catch {
@@ -68,11 +70,11 @@ public class HLSSegmentDownloader {
         }
         
         let joinOperation = RNConcurrentBlockOperation() { finished in
-            if !errors.isEmpty {
-                completion { throw HLSParserError.multipleErrors(errors) }
-            }
-            else {
-                completion { return Array(self.writers.keys) }
+            DispatchQueue.main.async {
+                completion {
+                    guard errors.isEmpty else { throw HLSParserError.multipleErrors(errors) }
+                    return Array(self.writers.keys)
+                }
             }
             finished?(nil)
         }

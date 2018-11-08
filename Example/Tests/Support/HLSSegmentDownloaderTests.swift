@@ -34,7 +34,7 @@ class HLSSegmentDownloaderTests: XCTestCase {
             try HLSSegmentDownloader.clearCaches()
         }
         catch {
-            fail("Failed to clear caches")
+            fail("Failed to clear caches with error \(error)")
         }
         
         expectationsForTestCanDownloadSegmentData()
@@ -125,11 +125,11 @@ class HLSSegmentDownloaderTests: XCTestCase {
                 var calledCount = 0
                 var lastProgress: Double = 0
                 downloader.progressHandler = { progress in
-                    expect(progress) != lastProgress
                     expect(progress) >= 0
                     expect(progress) <= 1
                     calledCount += 1
                     lastProgress = progress
+                    expect(Thread.isMainThread).to(beTrue())
                 }
                 downloader.downloadSegments(of: trackData) { response in
                     expect { () -> Void in
@@ -137,6 +137,7 @@ class HLSSegmentDownloaderTests: XCTestCase {
                     }.notTo(throwError())
                     expect(calledCount) == 100
                     expect(lastProgress) == 1
+                    expect(Thread.isMainThread).to(beTrue())
                     done()
                 }
             }
