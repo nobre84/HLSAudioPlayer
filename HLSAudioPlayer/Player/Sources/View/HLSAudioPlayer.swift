@@ -35,16 +35,31 @@ public class HLSAudioPlayer: UIView {
     deinit {
         print("Player gone")
     }
-
-    private lazy var coverLayer: CAShapeLayer = {
+    
+    private lazy var bgLayer: CAShapeLayer = {
         let width = iconImageView.bounds.size.width
         let pi = CGFloat(Double.pi)
-        let path = UIBezierPath(arcCenter: iconImageView.center, radius: width / 2, startAngle: 0, endAngle: 2 * pi, clockwise: false)
+        let path = UIBezierPath(arcCenter: iconImageView.center, radius: width / 8, startAngle: 0, endAngle: 2 * pi, clockwise: true)
         let shapeLayer = CAShapeLayer()
         shapeLayer.path = path.cgPath
         shapeLayer.fillColor = UIColor.clear.cgColor
-        shapeLayer.strokeColor = UIColor.white.withAlphaComponent(0.7).cgColor
-        shapeLayer.lineWidth = width
+        shapeLayer.strokeColor = UIColor.white.withAlphaComponent(0.8).cgColor
+        shapeLayer.lineWidth = 32
+        
+        shapeLayer.addSublayer(coverLayer)
+        
+        return shapeLayer
+    }()
+    
+    private lazy var coverLayer: CAShapeLayer = {
+        let width = iconImageView.bounds.size.width
+        let pi = CGFloat(Double.pi)
+        let path = UIBezierPath(arcCenter: iconImageView.center, radius: width / 8, startAngle: 3 * pi / 2, endAngle: 2 * pi + 3 * pi / 2, clockwise: true)
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.path = path.cgPath
+        shapeLayer.fillColor = UIColor.clear.cgColor
+        shapeLayer.strokeColor = UIColor(red: 83/255, green: 124/255, blue: 143/255, alpha: 0.8).cgColor
+        shapeLayer.lineWidth = 32
         return shapeLayer
     }()
     
@@ -77,6 +92,7 @@ public class HLSAudioPlayer: UIView {
         downloader.progressHandler = { progress in
             self.setLoadingPercentage(to: progress)
         }
+        setLoadingPercentage(to: 0)
         downloader.downloadSegments(of: track) { response in
             do {
                 _ = try response()
@@ -87,6 +103,8 @@ public class HLSAudioPlayer: UIView {
                 self.state = .playing
             }
             catch {
+                // Dismisses the loader in case of errors
+                self.setLoadingPercentage(to: 1)
                 self.state = .error(error)
             }
         }
@@ -108,7 +126,6 @@ public class HLSAudioPlayer: UIView {
     private func complete() {
         do {
             try HLSSegmentDownloader.clearCaches()
-            setLoadingPercentage(to: 0)
             iconImageView.image = Resources.iconPlay
         }
         catch {
@@ -130,7 +147,6 @@ public class HLSAudioPlayer: UIView {
         addSubview(contentView)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         contentView.addGestureRecognizer(tapGesture)
-        setLoadingPercentage(to: 0)
     }
     
     @objc private func handleTap(_ tapGestureRecognizer: UITapGestureRecognizer) {
@@ -148,14 +164,17 @@ public class HLSAudioPlayer: UIView {
     
     private func setLoadingPercentage(to value: Double) {
         if value == 0 {
-            iconImageView.layer.addSublayer(coverLayer)
+            CATransaction.begin()
+            CATransaction.setDisableActions(true)
+            self.coverLayer.strokeEnd = 0
+            CATransaction.commit()
+            self.iconImageView.layer.addSublayer(self.bgLayer)
         }
-        CATransaction.begin()
-        CATransaction.setDisableActions(true)
-        coverLayer.strokeEnd = CGFloat(1 - value)
-        CATransaction.commit()
-        if value == 1 {
-            coverLayer.removeFromSuperlayer()
+        else if value == 1 {
+            self.bgLayer.removeFromSuperlayer()
+        }
+        else {
+            self.coverLayer.strokeEnd = CGFloat(value)
         }
     }
     
