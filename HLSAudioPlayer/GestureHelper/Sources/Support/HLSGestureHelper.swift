@@ -7,7 +7,7 @@
 
 import UIKit
 
-private let minimumSwipeVelocity: CGFloat = 300
+private let minimumSwipeVelocity: CGFloat = 500
 
 public class HLSGestureHelper: NSObject {
     public var isDraggingEnabled = true
@@ -45,18 +45,21 @@ public class HLSGestureHelper: NSObject {
             let pinnedY =  superview.bounds.height / 2 - targetView.bounds.height / 2
             let velocity = recognizer.velocity(in: targetView.superview)
             
-            if velocity.x > minimumSwipeVelocity {
-                centerXConstraint.constant = pinnedX
-            }
-            else if velocity.x < -minimumSwipeVelocity {
-                centerXConstraint.constant = -pinnedX
-            }
-            if velocity.y > minimumSwipeVelocity {
-                centerYConstraint.constant = pinnedY
-            }
-            else if velocity.y < -minimumSwipeVelocity {
-                centerYConstraint.constant = -pinnedY
-            }
+            UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseOut], animations: {
+                if velocity.x > minimumSwipeVelocity {
+                    self.centerXConstraint.constant = pinnedX
+                }
+                else if velocity.x < -minimumSwipeVelocity {
+                    self.centerXConstraint.constant = -pinnedX
+                }
+                if velocity.y > minimumSwipeVelocity {
+                    self.centerYConstraint.constant = pinnedY
+                }
+                else if velocity.y < -minimumSwipeVelocity {
+                    self.centerYConstraint.constant = -pinnedY
+                }
+                superview.layoutIfNeeded()
+            })
         }
         recognizer.setTranslation(.zero, in: targetView.superview)
     }
